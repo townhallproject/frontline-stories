@@ -51,6 +51,8 @@ const TemplateWrapper = ({ children }) => {
       <Navbar />
       <div>{children}</div>
       <Footer />
+      <script async src="https://platform.twitter.com/widgets.js"></script>
+
     </div>
   )
 }
