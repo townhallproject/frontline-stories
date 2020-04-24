@@ -41,6 +41,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Embed link", name: "embed-link", widget: "code"}
 
   - name: "pages"
     label: "Pages"
