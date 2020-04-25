@@ -33,14 +33,15 @@ collections:
     folder: "src/pages/story-wall"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "name"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "embed-post"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Link to post", name: "link", widget: "string"}
+      - {label: "Source", name: "source", widget: "select"}
+      - {label: "Tags", name: "tags", widget: "list", options: ["facebook", "instagram", "twitter", "youtube"]}
 
   - name: "pages"
     label: "Pages"
