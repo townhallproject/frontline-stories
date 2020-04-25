@@ -19,8 +19,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - {label: "Display Page", name: "displayPage", widget: "hidden", default: "story-wall"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Page Name", name: "page", widget: "hidden", default: "story-wall"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Story", name: "story", widget: "markdown"}
@@ -35,7 +35,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: "name"
     fields:
-      - {label: "Page Name", name: "page", widget: "hidden", default: "story-wall"}
+      - {label: "Display Page", name: "displayPage", widget: "hidden", default: "story-wall"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "embed-post"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
