@@ -9,12 +9,13 @@ import {
 export const TwitterEmbed = ({ link, slug }) => {
     const id = link.split('/')[link.split('/').length - 1];
     console.log(id)
+    if (!id) return null;
     return (
-  <div className={slug}>
-        <TwitterTweetEmbed
-        tweetId={id}
-        />
-  </div>
+    <div className={slug}>
+            <TwitterTweetEmbed
+            tweetId={id}
+            />
+    </div>
   
 )}
 

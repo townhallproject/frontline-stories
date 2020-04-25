@@ -42,7 +42,7 @@ class BlogRoll extends React.Component {
                       
                     <TwitterEmbed
                         link={post.frontmatter.link}
-                    />: null}
+                    />: <div>{post.frontmatter.story}</div>}
                      
                     </span>
                   </p>
@@ -89,13 +89,11 @@ export default () => (
                 link
                 source
                 templateKey
-                story
-                category
-                occupation
                 displayPage
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-            
+                story
+                tags
               }
             }
           }

@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
 export const BlogPostTemplate = ({
-  content,
+  story,
   contentComponent,
   link,
   tags,
@@ -15,7 +15,6 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-
   return (
     <section className="section">
       {helmet || ''}
@@ -25,17 +24,15 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {name}
             </h1>
-            <p>{link}</p>
-            <PostContent content={content} />
+            <p>{story}</p>
+            <PostContent content={story} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
                 <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    <li key={tags + `tag`}>
+                      <Link to={`/tags/${kebabCase(tags)}/`}>{tags}</Link>
                     </li>
-                  ))}
                 </ul>
               </div>
             ) : null}
@@ -56,24 +53,24 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-
+  console.log(post)
   return (
     <Layout>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.link}
+        story={post.frontmatter.story}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.name}`}</title>
             <meta
               name="description"
-              content={`${post.frontmatter.link}`}
+              content={`${post.frontmatter.story}`}
             />
           </Helmet>
         }
         tags={post.frontmatter.tags}
-        title={post.frontmatter.name}
+        name={post.frontmatter.name}
       />
     </Layout>
   )
@@ -95,9 +92,8 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         name
-        story
         occupation
-        category
+        story
         tags
       }
     }

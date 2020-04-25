@@ -6,10 +6,10 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const BlogPostTemplate = ({
+export const EmbedPostTemplate = ({
   content,
   contentComponent,
-  description,
+  story,
   tags,
   name,
   helmet,
@@ -25,17 +25,15 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {name}
             </h1>
-            <p>{description}</p>
+            <p>{story}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
+                <h4>Category type</h4>
                 <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    <li key={tags + `tag`}>
+                      <Link to={`/tags/${kebabCase(tags)}/`}>{tags}</Link>
                     </li>
-                  ))}
                 </ul>
               </div>
             ) : null}
@@ -46,7 +44,7 @@ export const BlogPostTemplate = ({
   )
 }
 
-BlogPostTemplate.propTypes = {
+EmbedPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -54,12 +52,12 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
+const EmbedPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <BlogPostTemplate
+      <EmbedPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -79,13 +77,13 @@ const BlogPost = ({ data }) => {
   )
 }
 
-BlogPost.propTypes = {
+EmbedPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default BlogPost
+export default EmbedPost
 
 export const pageQuery = graphql`
   query EmbedPostByID($id: String!) {
@@ -97,7 +95,7 @@ export const pageQuery = graphql`
         name
         link
         source
-        category
+        story
         tags
       }
     }
