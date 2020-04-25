@@ -9,7 +9,7 @@ import Content, { HTMLContent } from '../components/Content'
 export const BlogPostTemplate = ({
   content,
   contentComponent,
-  description,
+  link,
   tags,
   name,
   helmet,
@@ -25,7 +25,7 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {name}
             </h1>
-            <p>{description}</p>
+            <p>{link}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -62,13 +62,13 @@ const BlogPost = ({ data }) => {
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        description={post.frontmatter.link}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.name}`}</title>
             <meta
               name="description"
-              content={`${post.frontmatter.description}`}
+              content={`${post.frontmatter.link}`}
             />
           </Helmet>
         }
@@ -95,7 +95,8 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         name
-        description
+        link
+        source
         tags
       }
     }

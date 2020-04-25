@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import TwitterEmbed from './TwitterEmbed'
 
 class BlogRoll extends React.Component {
   render() {
@@ -30,26 +31,23 @@ class BlogRoll extends React.Component {
                     </div>
                   ) : null}
                   <p className="post-meta">
-                    <Link
+                    {/* <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.name}
-                    </Link>
-                    <span> &bull; </span>
+                    </Link> */}
                     <span className="subtitle is-size-5 is-block">
-                      {post.content}
+                      {post.frontmatter.source === 'twitter' ? 
+                      
+                    <TwitterEmbed
+                        link={post.frontmatter.link}
+                    />: null}
+                     
                     </span>
                   </p>
                 </header>
-                <p>
-                  {post.frontmatter['embed-link']}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
+         
               </article>
             </div>
           ))}
@@ -68,21 +66,29 @@ BlogRoll.propTypes = {
 
 export default () => (
   <StaticQuery
-    query={graphql`
-      query BlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "embed-post" } } }
+  query={graphql`
+  query BlogRollQuery {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        frontmatter: {
+          templateKey: {
+            eq: "embed-post"
+          }
+        }
+      }
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
               id
+         
               fields {
                 slug
               }
               frontmatter {
                 name
+                link
+                source
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
