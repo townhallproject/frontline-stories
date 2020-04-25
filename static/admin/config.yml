@@ -29,7 +29,7 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "story-wall"
-    label: "Story Wall"
+    label: "Embedded Post"
     folder: "src/pages/story-wall"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -40,8 +40,8 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Link to post", name: "link", widget: "string"}
-      - {label: "Source", name: "source", widget: "select"}
-      - {label: "Tags", name: "tags", widget: "list", options: ["facebook", "instagram", "twitter", "youtube"]}
+      - {label: "Source", name: "source", widget: "select", options: ["facebook", "instagram", "twitter", "youtube"]}
+      - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "pages"
     label: "Pages"
