@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, StaticQuery } from 'gatsby'
+import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import TwitterEmbed from './TwitterEmbed'
 
@@ -31,12 +31,12 @@ class BlogRoll extends React.Component {
                     </div>
                   ) : null}
                   <p className="post-meta">
-                    {/* <Link
+                    <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.name}
-                    </Link> */}
+                    </Link>
                     <span className="subtitle is-size-5 is-block">
                       {post.frontmatter.source === 'twitter' ? 
                       
@@ -72,8 +72,8 @@ export default () => (
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          templateKey: {
-            eq: "embed-post"
+          displayPage: {
+            eq: "story-wall"
           }
         }
       }
@@ -81,7 +81,6 @@ export default () => (
           edges {
             node {
               id
-         
               fields {
                 slug
               }
@@ -90,6 +89,10 @@ export default () => (
                 link
                 source
                 templateKey
+                story
+                category
+                occupation
+                displayPage
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
             

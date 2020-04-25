@@ -96,7 +96,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         name
         link
-        description
+        source
+        category
         tags
       }
     }
