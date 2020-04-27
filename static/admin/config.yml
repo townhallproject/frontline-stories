@@ -47,7 +47,7 @@ collections:
       - {label: "Link to post", name: "link", widget: "string"}
       - {label: "Source", name: "source", widget: "select", options: ["facebook", "instagram", "twitter", "youtube"]}
       - {label: "State", name: "state", widget: "select", options: [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
-      - {label: "Tags", name: "tags", widget: "select", multiple: true, options: ["Economically Impacted", "Medical Professional", "COVID Survivor", "Wisconsin", "Family Member of COVID Victim", [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
+      - {label: "Tags", name: "tags", widget: "select", multiple: true, options: ["Economically Impacted", "Medical Professional", "COVID Survivor", "Wisconsin", "Family Member of COVID Victim" ];
 ]}
 
   - name: "pages"
