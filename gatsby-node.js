@@ -18,6 +18,7 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               tags
               templateKey
+              state
             }
           }
         }
@@ -66,6 +67,30 @@ exports.createPages = ({ actions, graphql }) => {
         component: path.resolve(`src/templates/tags.js`),
         context: {
           tag,
+        },
+      })
+    })
+
+    // Tag pages:
+    let states = []
+    // Iterate through each post, putting all found tags into `tags`
+    posts.forEach(edge => {
+      if (_.get(edge, `node.frontmatter.state`)) {
+        states.push(edge.node.frontmatter.state)
+      }
+    })
+    // Eliminate duplicate tags
+    states = _.uniq(states)
+
+    // Make tag pages
+    states.forEach(state => {
+      const statePath = `/states/${_.kebabCase(state)}/`
+
+      createPage({
+        path: statePath,
+        component: path.resolve(`src/templates/states.js`),
+        context: {
+          state,
         },
       })
     })
