@@ -7,4 +7,5 @@ link: https://twitter.com/amandalitman/status/1254434296812666881?s=20
 source: twitter
 tags:
   - Abrams
+  - tweet
 ---
