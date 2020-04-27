@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Story Wall
-image: /img/home-jumbotron.jpg
+image: /img/chemex.jpg
 heading: Heading
 subheading: subheading
 description: Info about this page

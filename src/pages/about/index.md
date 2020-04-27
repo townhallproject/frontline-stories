@@ -1,7 +1,9 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 path: /about
-title: About
+title: About this site
+intro:
+  heading: Heading
+  description: Introdution
 ---
-### About
 Information about this site
