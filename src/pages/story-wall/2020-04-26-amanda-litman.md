@@ -8,4 +8,5 @@ source: twitter
 state: CA
 tags:
   - Abrams
+  - tweet
 ---
