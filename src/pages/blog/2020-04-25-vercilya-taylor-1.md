@@ -11,5 +11,6 @@ story: A little less reported on, but still important, in cities where the
   would expose how entire cities that are abundantly black could be WIPED OUT by
   this pandemic.
 occupation: Teacher
-tags: Economically Impacted
+tags: 
+  - Economically Impacted
 ---
