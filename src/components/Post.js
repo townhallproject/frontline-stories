@@ -25,7 +25,7 @@ class Post extends React.Component {
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
+                  <div className="post-meta">
                     <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
@@ -40,7 +40,7 @@ class Post extends React.Component {
                     />: <div>{post.frontmatter.story}</div>}
                      
                     </span>
-                  </p>
+                  </div>
                 </header>
          
               </article>
