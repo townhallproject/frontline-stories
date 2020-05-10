@@ -1,0 +1,29 @@
+@import './colors.scss';
+// blog roll
+.blog-list-item.is-featured {
+
+  border: 1px solid $offer;
+}
+.blog-list-item header {
+
+  display: flex;
+  margin-bottom: 1em;
+}
+.blog-list-item .featured-thumbnail {
+
+  flex-basis: 35%;
+  margin: 0 1.5em 0 0;
+}
+.box {
+
+  padding: 0!important;
+}
+.title:not(.is-spaced) + .subtitle {
+
+  margin-top: 0!important;
+}
+.post-meta {
+
+  width: 100%;
+  padding: 20px;
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import Post from './Post'
+import './blogroll.scss'
 
 class BlogRoll extends React.Component {
   render() {
