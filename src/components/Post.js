@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import TwitterEmbed from './TwitterEmbed'
+import Embed from './Embed'
 
 class Post extends React.Component {
   render() {
@@ -33,12 +34,11 @@ class Post extends React.Component {
                       {post.frontmatter.name}
                     </Link>
                     <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.source === 'twitter' ? 
-                      
-                    <TwitterEmbed
-                        link={post.frontmatter.link}
-                    />: <div>{post.frontmatter.story}</div>}
-                     
+                      <Embed 
+                          link={post.frontmatter.link}
+                          source={post.frontmatter.source}
+                          story={post.frontmatter.story}
+                      />
                     </span>
                   </div>
                 </header>

@@ -25,4 +25,3 @@ TwitterEmbed.propTypes = {
 }
 
 export default TwitterEmbed
-
