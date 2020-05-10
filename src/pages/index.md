@@ -1,8 +1,9 @@
 ---
 templateKey: index-page
-title: Story Wall
-image: /img/chemex.jpg
-heading: Heading
-subheading: subheading
-description: Info about this page
+title: FRONTLINE STORIES
+image: /img/flsbanner.png
+heading: FEATURED STORIES
+subheading: We are the millions of Americans at the Frontline of this crisis.
+  Our stories deserve to be heard.
+description: ""
 ---
