@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
-import TwitterEmbed from './TwitterEmbed'
+import { graphql, StaticQuery } from 'gatsby'
 import Post from './Post'
 
 class BlogRoll extends React.Component {
@@ -16,6 +14,7 @@ class BlogRoll extends React.Component {
           posts.map(({ node: post }) => (
             <Post 
               post={post}
+              key={post.fields.slug}
             />
           ))}
       </div>

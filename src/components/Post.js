@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import TwitterEmbed from './TwitterEmbed'
 import Embed from './Embed'
 
 class Post extends React.Component {
@@ -11,7 +10,7 @@ class Post extends React.Component {
     return (
             <div className="is-parent column is-6" key={post.id}>
               <article
-                className={`blog-list-item tile is-child box notification ${
+                className={`blog-list-item tile is-child box ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
               >
@@ -38,6 +37,7 @@ class Post extends React.Component {
                           link={post.frontmatter.link}
                           source={post.frontmatter.source}
                           story={post.frontmatter.story}
+                          slug={post.fields.slug}
                       />
                     </span>
                   </div>
