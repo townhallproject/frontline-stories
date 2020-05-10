@@ -7,13 +7,15 @@ import {
 } from 'react-twitter-embed';
 
 export const TwitterEmbed = ({ link, slug }) => {
-    const id = link.split('/')[link.split('/').length - 1];
-    console.log(id)
+    let cleanLink = link.split('?')[0];
+    const id = cleanLink.split('/')[cleanLink.split('/').length - 1];
     if (!id) return null;
     return (
     <div className={slug}>
             <TwitterTweetEmbed
-            tweetId={id}
+              tweetId={id}
+              options={{width: 500}}
+
             />
     </div>
   
