@@ -95,7 +95,6 @@ export const pageQuery = graphql`
         name
         link
         source
-        story
         tags
       }
     }

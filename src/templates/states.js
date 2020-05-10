@@ -68,7 +68,6 @@ export const statesPageQuery = graphql`
             name
             source
             link
-            story
             tags
             state
           }

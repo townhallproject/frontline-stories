@@ -59,7 +59,6 @@ export default () => (
                 displayPage
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-                story
                 tags
               }
             }
