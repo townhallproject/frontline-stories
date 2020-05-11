@@ -8,7 +8,6 @@ class BlogRoll extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    console.log(data)
     return (
       <div className="columns is-multiline">
         {posts &&
@@ -34,16 +33,13 @@ BlogRoll.propTypes = {
 export default () => (
   <StaticQuery
   query={graphql`
-  query BlogRollQuery {
+  query FeaturedPostQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          displayPage: {
-            eq: "story-wall"
-          }
           featuredpost: {
-            ne: true
+            eq: true
           }
         }
       }
