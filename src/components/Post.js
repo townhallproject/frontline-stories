@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import Embed from './Embed'
+import './post.scss';
 
 class Post extends React.Component {
   render() {
     const { post } = this.props;
     return (
-            <div className="is-parent column is-6" key={post.id}>
+            <div className="is-parent column is-6 card-container" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''

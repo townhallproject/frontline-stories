@@ -9,7 +9,7 @@ class BlogRoll extends React.Component {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
     return (
-      <div className="columns is-multiline">
+      <div className="columns is-multiline grid-container">
         {posts &&
           posts.map(({ node: post }) => (
             <Post 

@@ -5,6 +5,11 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
 import FeaturedStories from '../components/FeaturedStories'
+import {
+  Link
+} from 'gatsby';
+import logo from '../img/logo.svg'
+
 
 export const IndexPageTemplate = ({
   image,
@@ -27,39 +32,23 @@ export const IndexPageTemplate = ({
       <div
         style={{
           display: 'flex',
-          height: '150px',
+          height: '250px',
           lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
+          justifyContent: 'space-between',
+          alignItems: 'center',
           flexDirection: 'column',
         }}
       >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              '#037a8f 0.5rem 0px 0px, #037a8f -0.5rem 0px 0px',
-            backgroundColor: '#037a8f',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              '#037a8f 0.5rem 0px 0px, #037a8f -0.5rem 0px 0px',
-            backgroundColor: '#037a8f',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
+     <div className="content has-text-centered">
+          <img
+            src={logo}
+            alt="Frontline stories"
+            style={{ width: '24em', height: '10em', fill: 'green', filter: 'drop-shadow(2px 4px 6px gray)' }}
+          />
+        </div>
+        <Link className="btn" to="/contact">
+                Tell your story
+        </Link>
       </div>
     </div>
     <section className="section section--gradient">
