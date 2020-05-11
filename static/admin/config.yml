@@ -28,7 +28,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: "image", required: false}
       - {label: "Occupation", name: "occupation", widget: "string"}
       - {label: "State", name: "state", widget: "select", options: ["AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"]}
-      - {label: "Tags", name: "tag", widget: "select", multiple: true, options: ["Economically Impacted", "Medical Professional", "COVID Survivor", "Wisconsin", "Family Member of COVID Victim" ]}
+      - {label: "Tags", name: "tags", widget: "select", multiple: true, options: ["Economically Impacted", "Medical Professional", "COVID Survivor", "Wisconsin", "Family Member of COVID Victim" ]}
       - {label: "Story", name: "body", widget: "markdown"}
 
   - name: "story-wall"
@@ -47,7 +47,7 @@ collections:
       - {label: "Occupation", name: "occupation", widget: "string", required: false}
       - {label: "Source", name: "source", widget: "select", options: ["facebook", "instagram", "twitter", "youtube"]}
       - {label: "State", name: "state", widget: "select", options: ["AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"]}
-      - {label: "Tags", name: "tag", widget: "select", multiple: true, options: ["Economically Impacted", "Medical Professional", "COVID Survivor", "Wisconsin", "Family Member of COVID Victim" ]}
+      - {label: "Tags", name: "tags", widget: "select", multiple: true, options: ["Economically Impacted", "Medical Professional", "COVID Survivor", "Wisconsin", "Family Member of COVID Victim" ]}
 
   - name: "pages"
     label: "Pages"

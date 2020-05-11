@@ -7,6 +7,7 @@ import Embed from './Embed'
 class Post extends React.Component {
   render() {
     const { post } = this.props;
+    console.log('post', post)
     return (
             <div className="is-parent column is-6" key={post.id}>
               <article

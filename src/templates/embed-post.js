@@ -5,17 +5,14 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import Embed from '../components/Embed'
 
 export const EmbedPostTemplate = ({
-  content,
-  contentComponent,
-  story,
   tags,
   name,
   helmet,
+  post
 }) => {
-  const PostContent = contentComponent || Content
-
   return (
     <section className="section">
       {helmet || ''}
@@ -25,11 +22,15 @@ export const EmbedPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {name}
             </h1>
-            <p>{story}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
+                <Embed 
+                  link={post.frontmatter.link}
+                  source={post.frontmatter.source}
+                  story={post.frontmatter.story}
+                  slug={post.fields.slug}
+                />            
+              {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
-                <h4>Category type</h4>
+                <h4>Tags</h4>
                 <ul className="taglist">
                     <li key={tags + `tag`}>
                       <Link to={`/tags/${kebabCase(tags)}/`}>{tags}</Link>
@@ -54,13 +55,14 @@ EmbedPostTemplate.propTypes = {
 
 const EmbedPost = ({ data }) => {
   const { markdownRemark: post } = data
-
   return (
     <Layout>
       <EmbedPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        name={post.frontmatter.name}
+        post={post}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.name}`}</title>
@@ -90,6 +92,9 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         name

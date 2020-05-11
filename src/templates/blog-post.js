@@ -5,16 +5,20 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import Embed from '../components/Embed'
 
 export const BlogPostTemplate = ({
   story,
   contentComponent,
   link,
+  content,
   tags,
   name,
+  post,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
+  console.log(tags)
   return (
     <section className="section">
       {helmet || ''}
@@ -24,8 +28,7 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {name}
             </h1>
-            <p>{story}</p>
-            <PostContent content={story} />
+            <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -53,7 +56,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log(post)
+  console.log('blog post', post)
   return (
     <Layout>
       <BlogPostTemplate

@@ -7,6 +7,6 @@ featuredpost: true
 link: https://twitter.com/SteflonMD/status/1248308618291818496
 source: twitter
 state: MD
-tag:
+tags:
   - Medical Professional
 ---
