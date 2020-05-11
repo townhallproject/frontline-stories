@@ -39,7 +39,7 @@ export default class Index extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact</h1>
+              <h1>Tell your story</h1>
               <form
                 name="contact"
                 method="post"
@@ -87,16 +87,106 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'message'}>
-                    Message
+                  <label className="label" htmlFor={'phone'}>
+                    Phone
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'phone'}
+                      name={'phone'}
+                      onChange={this.handleChange}
+                      id={'phone'}
+                      required={true}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'city'}>
+                    City
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'city'}
+                      name={'city'}
+                      onChange={this.handleChange}
+                      id={'city'}
+                      required={false}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'state'}>
+                    State
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'state'}
+                      name={'state'}
+                      onChange={this.handleChange}
+                      id={'state'}
+                      required={true}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'zipcode'}>
+                    Zipcode
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'zipcode'}
+                      name={'zipcode'}
+                      onChange={this.handleChange}
+                      id={'zipcode'}
+                      required={true}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'occupation'}>
+                    Occupation
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'occupation'}
+                      name={'occupation'}
+                      onChange={this.handleChange}
+                      id={'occupation'}
+                      required={true}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'link'}>
+                    Link to your story on social media
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'link'}
+                      name={'link'}
+                      onChange={this.handleChange}
+                      id={'link'}
+                      required={false}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'story'}>
+                    More about you
                   </label>
                   <div className="control">
                     <textarea
                       className="textarea"
-                      name={'message'}
+                      name={'story'}
                       onChange={this.handleChange}
-                      id={'message'}
-                      required={true}
+                      id={'story'}
+                      required={false}
                     />
                   </div>
                 </div>
