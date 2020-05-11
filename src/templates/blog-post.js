@@ -5,16 +5,12 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import Embed from '../components/Embed'
 
 export const BlogPostTemplate = ({
-  story,
   contentComponent,
-  link,
   content,
   tags,
   name,
-  post,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
@@ -56,7 +52,6 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log('blog post', post)
   return (
     <Layout>
       <BlogPostTemplate

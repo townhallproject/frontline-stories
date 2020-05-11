@@ -6,8 +6,9 @@ import './blogroll.scss'
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
+    console.log(data)
     return (
       <div className="columns is-multiline">
         {posts &&
@@ -47,6 +48,7 @@ export default () => (
           edges {
             node {
               id
+              html
               fields {
                 slug
               }

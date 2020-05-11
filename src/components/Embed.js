@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TwitterEmbed from './TwitterEmbed'
 import FacebookEmbed from './FacebookEmbed'
+import Content, {
+  HTMLContent
+} from '../components/Content'
 
 export const Embed = ({link, slug, source, story}) => {
   switch(source) {
@@ -10,9 +13,10 @@ export const Embed = ({link, slug, source, story}) => {
     case 'facebook':
       return <FacebookEmbed link={link} slug={slug} />
     default: 
-      return <div>{story}</div>
+      return <HTMLContent
+                content={story}
+              />
   }
-
 }
 
 Embed.propTypes = {

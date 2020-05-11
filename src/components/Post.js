@@ -37,13 +37,12 @@ class Post extends React.Component {
                       <Embed 
                           link={post.frontmatter.link}
                           source={post.frontmatter.source}
-                          story={post.frontmatter.story}
+                          story={post.html}
                           slug={post.fields.slug}
                       />
                     </span>
                   </div>
                 </header>
-         
               </article>
             </div>
         
