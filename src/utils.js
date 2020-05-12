@@ -28,7 +28,6 @@
       for (i = 0; i < gcLength; ++i) {
           gHeight += gc[i].offsetHeight + parseInt(gridGutter);
       }
-
       /*
        * Calculate and set the masonry height based on the columns
        * provided for big, medium, and small screen devices.
@@ -40,15 +39,12 @@
       if (windowWidth >= largeBreakpoint) {
           //large
           newHeight = gHeight / bigGridCol + gHeight / (gcLength + 1);
-          console.log("LARGE", windowWidth, newHeight)
       } else if (windowWidth < largeBreakpoint && windowWidth >= medBreakpoint) {
-          console.log("MEDIUM", windowWidth, newHeight, containerSelector)
           newHeight = gHeight / medGridCol + gHeight / (gcLength + 1);
       } else {
           newHeight = gHeight / sGridCol + gHeight / (gcLength + 1);
       }
       if (newHeight <= 300) {
-          console.log('need to resize again')
           return setTimeout(() => calcGridSize(containerSelector, cardSelector), 3000);
       }
       g.style.height = newHeight + 'px';
