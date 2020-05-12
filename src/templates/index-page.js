@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import StoryWall from '../components/StoryWall'
-import FeaturedStories from '../components/FeaturedStories'
 import {
   Link
 } from 'gatsby';
