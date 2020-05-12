@@ -1,4 +1,24 @@
+@import './all.scss';
+
 .card-container {
-  margin: 0 8px 8px 0; /* Some gutter */
+    margin: 0 8px 8px 0; /* Some gutter */
+    padding: 0!important;
+    .post-meta {
+        min-height: 470px;
+
+    }
+}
+
+@media screen and (min-width: $mediumBreakpoint) { 
+    .card-container {
+        width: 50%;
+    }
+
+}
+
+@media screen and (min-width: $largeBreakpoint) { 
+    .card-container {
+        width: 33%;
+    }
 
 }

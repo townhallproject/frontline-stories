@@ -1,9 +1,10 @@
 @import './colors.scss';
-// blog roll
-.blog-list-item.is-featured {
 
-  border: 1px solid $offer;
+.story-wall {
+  min-height: 200vh;
 }
+// blog roll
+
 .blog-list-item header {
 
   display: flex;
@@ -27,3 +28,4 @@
   width: 100%;
   padding: 20px;
 }
+

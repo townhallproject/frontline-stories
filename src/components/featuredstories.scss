@@ -1,0 +1,9 @@
+@import './colors.scss';
+
+.featured-stories {
+  min-height: 300px;
+}
+
+.blog-list-item.is-featured {
+  border: 1px solid $offer;
+}

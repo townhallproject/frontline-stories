@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import BlogRoll from '../components/BlogRoll'
+import StoryWall from '../components/StoryWall'
 import FeaturedStories from '../components/FeaturedStories'
 import {
   Link
@@ -65,7 +65,6 @@ export const IndexPageTemplate = ({
                     <h3 className="has-text-weight-semibold is-size-2">
                       {heading}
                     </h3>
-                    <p>{description}</p>
                   </div>
                 </div>
                 <FeaturedStories />
@@ -73,7 +72,7 @@ export const IndexPageTemplate = ({
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
                   </h3>
-                  <BlogRoll />
+                  <StoryWall / >
 
                 </div>
               </div>

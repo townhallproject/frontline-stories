@@ -1,6 +1,8 @@
 @import "~bulma/sass/utilities/initial-variables";
 @import './colors.scss';
-
+$largeBreakpoint: 1411px;
+$mediumBreakpoint: 800px;
+$smallBreakpoint: 400px;
 // Config vars
 $general: #8048f3;
 $offer: #6ac1e5;
@@ -37,7 +39,6 @@ $menu-label-color: $white-ter;
   justify-content: left;
   align-items: center;
   li {
-
     padding: 0 2rem 1rem 0;
     margin-bottom: 1.5rem;
     margin-top: 0;
@@ -164,15 +165,19 @@ footer.footer {
     margin: 0 0 1em;
   }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: $mediumBreakpoint) {
 
   .grid-container:not(.is-desktop) {
     display: flex;
     flex-flow: column wrap;
     margin-left: -8px; /* Adjustment for the gutter */
-    width: 100vh;
+    width: 100%;
   }
-  .story-wall {
-    min-height: 200vh;
+
+}
+
+@media screen and (max-width: $smallBreakpoint) {
+  .section {
+    padding: 0!important;
   }
 }

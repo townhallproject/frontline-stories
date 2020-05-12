@@ -9,7 +9,7 @@ class Post extends React.Component {
   render() {
     const { post } = this.props;
     return (
-            <div className="is-parent column is-6 card-container" key={post.id}>
+            <div className="is-parent column card-container" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''

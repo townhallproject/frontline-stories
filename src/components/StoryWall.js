@@ -1,29 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
-import Post from './Post'
 import imagesLoaded from 'imagesloaded';
+import Post from './Post'
+import './storywall.scss'
 import { calcGridSize } from '../utils';
 
-class FeaturedStories extends React.Component {
+class StoryWall extends React.Component {
 
   componentDidMount() {
-    calcGridSize('.featured-stories', '.featured-stories .card-container');
+    calcGridSize('.story-wall', '.story-wall .card-container');
+    setTimeout(() => calcGridSize('.story-wall', '.story-wall .card-container'), 3000);
+    setTimeout(() => calcGridSize('.story-wall', '.story-wall .card-container'), 4000);
 
     window.addEventListener("resize", function () {
       // Check if all the images finished loading
       imagesLoaded(document.querySelector('.grid-container'), function () {
-        calcGridSize('.featured-stories', '.featured-stories .card-container');
+        calcGridSize('.story-wall', '.story-wall .card-container');
       });
     })
-  
   }
 
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
     return (
-      <div className="columns is-multiline grid-container featured-stories">
+      <div className="columns is-multiline story-wall grid-container">
         {posts &&
           posts.map(({ node: post }) => (
             <Post 
@@ -36,7 +38,7 @@ class FeaturedStories extends React.Component {
   }
 }
 
-FeaturedStories.propTypes = {
+StoryWall.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -47,13 +49,16 @@ FeaturedStories.propTypes = {
 export default () => (
   <StaticQuery
   query={graphql`
-  query FeaturedPostQuery {
+  query BlogRollQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
+          displayPage: {
+            eq: "story-wall"
+          }
           featuredpost: {
-            eq: true
+            ne: true
           }
         }
       }
@@ -80,6 +85,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <FeaturedStories data={data} count={count} />}
+    render={(data, count) => <StoryWall data={data} count={count} />}
   />
 )
