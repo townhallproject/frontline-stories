@@ -9,18 +9,19 @@ import {
   Link
 } from 'gatsby';
 import logo from '../img/logo.svg'
+import '../components/main.scss';
 
 
 export const IndexPageTemplate = ({
   image,
   title,
   heading,
-  subheading,
+  subtitle,
   description,
 }) => (
   <div>
     <div
-      className="full-width-image margin-top-0"
+      className="full-width-image margin-top-0 header"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
@@ -30,49 +31,46 @@ export const IndexPageTemplate = ({
       }}
     >
       <div
-        style={{
-          display: 'flex',
-          height: '250px',
-          lineHeight: '1',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexDirection: 'column',
-        }}
+       className="header-overlay"
       >
-     <div className="content has-text-centered">
+        <div className="content has-text-centered">
           <img
             src={logo}
             alt="Frontline stories"
-            style={{ width: '24em', height: '10em', fill: 'green', filter: 'drop-shadow(2px 4px 6px gray)' }}
+            style={{ width: '35em', fill: 'green', filter: 'drop-shadow(2px 0px 6px black)' }}
           />
         </div>
+     
+      </div>
+    </div>
+    <section className="tell-story-container">
+        <h3
+          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen subtitle"
+      
+        >
+          {subtitle}
+        </h3>
         <Link className="btn" to="/contact">
                 Tell your story
         </Link>
-      </div>
-    </div>
+
+    </section>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content">
-                
-                </div>
                 <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
+                  <div className="column is-12 is-offset-5">
                   </div>
                 </div>
-                <FeaturedStories />
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
+                    {heading}
                   </h3>
-                  <StoryWall / >
+           
+                  <StoryWall />
 
                 </div>
               </div>
@@ -105,7 +103,7 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
+        subtitle={frontmatter.subtitle}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -137,7 +135,7 @@ export const pageQuery = graphql`
           }
         }
         heading
-        subheading
+        subtitle
         description
       }
     }

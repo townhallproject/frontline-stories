@@ -59,8 +59,8 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
+          - {label: Heading, name: heading, widget: string, required: false}
+          - {label: Subtitle, name: subtitle, widget: string}
           - {label: Description, name: description, widget: string, required: false}
       - file: "src/pages/about/index.md"
         label: "About"
