@@ -40,6 +40,11 @@ export default class Index extends React.Component {
           <div className="container">
             <div className="content">
               <h1>Tell your story</h1>
+              <p>Are you impacted directly by the COVID-19 crisis? Share your story with us below.</p>
+              <p>
+                Your story is how we make sure the voices of the people across the country -- those most directly impacted by the Trump Administration 's mishandling of the coronavirus -- are heard.
+
+              </p>
               <form
                 name="contact"
                 method="post"
