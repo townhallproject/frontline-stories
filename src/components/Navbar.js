@@ -62,7 +62,12 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/about">
                 About
               </Link>
-     
+              <Link className="navbar-item" to="/contact">
+                Submit a Story
+              </Link>    
+              <a className="navbar-item" href="https://thehubproject.us19.list-manage.com/subscribe?u=71c118e79d1b482e43272a116&id=e3236c52d5">
+                Subscribe
+              </a>
             </div>
           </div>
         </div>
