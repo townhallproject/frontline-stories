@@ -1,0 +1,29 @@
+@import '../../components/all.scss';
+
+.form-wrapper {
+    padding: 0 1em;
+}
+.form-container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.form-container .field {
+    width: 100%;
+    padding: 0 1em;
+}
+
+.is-link:hover {
+    cursor: pointer;
+}
+
+@media screen and (min-width: $mediumBreakpoint) {
+    .form-container {
+        height: 500px;
+    }
+    .form-container .field {
+        width: 40%;
+    }
+
+}

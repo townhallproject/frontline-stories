@@ -2,6 +2,8 @@ import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
 
+import './style.scss';
+
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -37,12 +39,12 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <div className="container">
+          <div className="container form-wrapper">
             <div className="content">
               <h1>Tell your story</h1>
               <p>Are you impacted directly by the COVID-19 crisis? Share your story with us below.</p>
               <p>
-                Your story is how we make sure the voices of the people across the country -- those most directly impacted by the Trump Administration 's mishandling of the coronavirus -- are heard.
+                Your story is how we make sure the voices of the people across the country -- those most directly impacted by the Trump Administration's mishandling of the coronavirus -- are heard.
 
               </p>
               <form
@@ -52,6 +54,7 @@ export default class Index extends React.Component {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
+                className="form-container"
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -76,7 +79,7 @@ export default class Index extends React.Component {
                     />
                   </div>
                 </div>
-                <div className="field">
+                <div className="field ">
                   <label className="label" htmlFor={'email'}>
                     Email
                   </label>
@@ -196,7 +199,7 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <button className="button is-link" type="submit">
+                  <button className="btn is-link" type="submit">
                     Send
                   </button>
                 </div>

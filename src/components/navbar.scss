@@ -1,0 +1,33 @@
+@import './colors.scss';
+
+.navbar {
+    background-color: #231432!important;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar a:hover {
+    color: $primary!important;
+}
+.navbar-item .icon {
+
+  color: $primary;
+// Override for use of svg's from https://simpleicons.org/
+}
+.icon svg {
+  
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.navbar-brand .navbar-item.logo {
+
+  padding: 0 1rem;
+}
+
+.navbar .navbar-menu {
+  box-shadow:none !important;
+}
