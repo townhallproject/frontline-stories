@@ -183,7 +183,7 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'story'}>
-                    More about you
+                    Tell us more about your personal experience with the coronavirus pandemic
                   </label>
                   <div className="control">
                     <textarea
