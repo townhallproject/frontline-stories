@@ -7,7 +7,7 @@ export default () => (
       <div className="container">
         <div className="content">
           <h1>Thank you!</h1>
-          <p>We will take a look at your submission as soon as possible.</p>
+          <p>Thank you! Your story matters to us. We appreciate you sharing it to help advocate for people-centered solutions to the current public health crisis.</p>
         </div>
       </div>
     </section>
