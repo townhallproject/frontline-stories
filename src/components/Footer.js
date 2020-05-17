@@ -13,7 +13,7 @@ const Footer = class extends React.Component {
           <a href="/">
             <img
               src={logo}
-              alt="Kaldi"
+              alt="Frontline stories"
               style={{ width: '14em', height: '10em' }}
             />
           </a>
