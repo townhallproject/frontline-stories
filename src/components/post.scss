@@ -10,6 +10,17 @@
     }
 }
 
+.facebook-post {
+    position: relative;
+}
+.facebook-post a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 @media screen and (min-width: $mediumBreakpoint) { 
     .card-container {
         width: 50%;
