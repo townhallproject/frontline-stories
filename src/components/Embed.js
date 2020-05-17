@@ -14,7 +14,6 @@ export const Embed = ({link, slug, source, story}) => {
     case 'facebook':
       return <FacebookEmbed link={link} slug={slug} />
     case 'youtube':
-      console.log('found youtube')
       return <YouTubeEmbed link={link} slug={slug} />
     default: 
       return <HTMLContent
