@@ -25,8 +25,10 @@
           gHeight = 0, // Initial height of our masonry
           i; // Loop counter
       // Calculate the net height of all the cells in the masonry
+      let defaultHeight = 650;
       for (i = 0; i < gcLength; ++i) {
-          gHeight += gc[i].offsetHeight + parseInt(gridGutter);
+          let newHeight = gc[i].offsetHeight > defaultHeight ? gc[i].offsetHeight : defaultHeight;
+          gHeight += newHeight + parseInt(gridGutter);
       }
       /*
        * Calculate and set the masonry height based on the columns
