@@ -10,7 +10,6 @@ const _onReady = (event) => {
 
 export const YouTubeEmbed = ({ link, slug }) => {
     const id = link.split('?v=')[1];
-    console.log(link, id)
     if (!id) return null;
     const opts = {
       width: '100%',
@@ -23,7 +22,6 @@ export const YouTubeEmbed = ({ link, slug }) => {
  
     return (
       <div className={slug}>
-
         <YouTube videoId={id} opts={opts} onReady={_onReady} />
       </div>
       );
