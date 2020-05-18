@@ -9,12 +9,12 @@ subtitle: The Frontline Stories project uplifts and spotlights the human element
   displaced, patients and their families—at the forefront of the
   conversation.  In sharing our stories, we are giving voice to the need for a
   people-centered response. We are joining together to demand and mobilize for
-  change that serves us, the people at the frontlines.
+  change that serves us, the people at the front lines.
 description: The Frontline Stories project uplifts and spotlights the human
   element at the heart of the coronavirus pandemic. It puts Americans most
   directly impacted by the crisis—medical staff, essential workers, the
   economically displaced, patients and their families—at the forefront of the
   conversation.  In sharing our stories, we are giving voice to the need for a
   people-centered response. We are joining together to demand and mobilize for
-  change that serves us, the people at the frontlines.
+  change that serves us, the people at the front lines.
 ---
