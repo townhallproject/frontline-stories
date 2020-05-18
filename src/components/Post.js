@@ -7,7 +7,8 @@ import './post.scss';
 
 class Post extends React.Component {
   render() {
-    const { post } = this.props;
+
+    const { post, load } = this.props;
     return (
             <div className="is-parent card-container" key={post.id}>
               <article
@@ -34,12 +35,12 @@ class Post extends React.Component {
                       {post.frontmatter.name}
                     </Link>
                     <span className="subtitle is-size-5 is-block">
-                      <Embed 
+                    {load && <Embed 
                           link={post.frontmatter.link}
                           source={post.frontmatter.source}
                           story={post.html}
                           slug={post.fields.slug}
-                      />
+                      />}
                     </span>
                   </div>
                 </header>

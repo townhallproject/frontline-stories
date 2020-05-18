@@ -5,13 +5,19 @@ import imagesLoaded from 'imagesloaded';
 import Post from './Post'
 import './storywall.scss'
 import { calcGridSize } from '../utils';
+import {
+  Waypoint
+} from 'react-waypoint';
 
 class StoryWall extends React.Component {
+  constructor(props) {
+    super(props) 
+    this.state = {
+    }
+  }
 
   componentDidMount() {
     calcGridSize('.story-wall', '.story-wall .card-container');
-    setTimeout(() => calcGridSize('.story-wall', '.story-wall .card-container'), 3000);
-    setTimeout(() => calcGridSize('.story-wall', '.story-wall .card-container'), 4000);
 
     window.addEventListener("resize", function () {
       // Check if all the images finished loading
@@ -24,17 +30,34 @@ class StoryWall extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    return (
-      <div className="columns is-multiline story-wall grid-container">
+    const handleEnter = (event, index) => {
+      calcGridSize('.story-wall', '.story-wall .card-container');
+      if (!this.state[index]) {
+
+        this.setState({
+          [index]: true
+        })
+      }
+    }
+      
+    return (<div className="columns is-multiline story-wall grid-container">
         {posts &&
-          posts.map(({ node: post }) => (
-            <Post 
-              post={post}
-              key={post.fields.slug}
-            />
+          posts.map(({ node: post }, index) => (
+            <>
+              <Post 
+                post={post}
+                key={post.fields.slug}
+                load={this.state[index]}
+              />
+              <Waypoint
+                  onEnter={(event) => handleEnter(event, index)}
+                  id={index}
+                  bottomOffset={'-700px'}
+
+              />
+            </>
           ))}
-      </div>
-    )
+      </div>)
   }
 }
 
