@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Frontline Stories',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'The Frontline Stories project uplifts and spotlights the human element at the heart of the coronavirus pandemic. It puts Americans most directly impacted by the crisis—medical staff, essential workers, the economically displaced, patients and their families—at the forefront of the conversation.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
