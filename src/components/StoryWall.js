@@ -80,9 +80,6 @@ export default () => (
           displayPage: {
             eq: "story-wall"
           }
-          featuredpost: {
-            ne: true
-          }
         }
       }
         ) {
