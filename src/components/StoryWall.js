@@ -74,14 +74,14 @@ export default () => (
   query={graphql`
   query BlogRollQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: {
+        order: [ASC, DESC],
+        fields: [frontmatter___featuredpost, frontmatter___date]
+      }
       filter: {
         frontmatter: {
           displayPage: {
             eq: "story-wall"
-          }
-          featuredpost: {
-            ne: true
           }
         }
       }
