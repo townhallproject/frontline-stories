@@ -74,7 +74,7 @@ class StoryWall extends React.Component {
               <Post 
                 post={post}
                 key={post.fields.slug}
-                load={this.state[post.id]}
+                load={this.state[post.id] || index < 4}
                 handleMount={this.handleMount}
                 onSize={(size) => this.onSize(size, post.id)}
                 index={index}
