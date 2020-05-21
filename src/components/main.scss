@@ -1,3 +1,4 @@
+@import './colors.scss';
 
 .header .subtitle {
     width: 55%;
@@ -21,4 +22,12 @@
     text-align: center;
     padding: 2em;
     background: #44246124;
+}
+
+.navbar-burger {
+  color: white;
+}
+
+.about-page a {
+  color: $bright-purple;
 }
