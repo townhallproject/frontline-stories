@@ -154,6 +154,7 @@ footer.footer {
     flex-flow: column wrap;
     margin-left: -8px; /* Adjustment for the gutter */
     width: 100%;
+    justify-content: space-between;
   }
 
 }

@@ -25,10 +25,10 @@
           gHeight = 0, // Initial height of our masonry
           i; // Loop counter
       // Calculate the net height of all the cells in the masonry
-      let defaultHeight = 650;
+      let defaultHeight = 690;
       for (i = 0; i < gcLength; ++i) {
           let newHeight = gc[i].offsetHeight > defaultHeight ? gc[i].offsetHeight : defaultHeight;
-          gHeight += newHeight + parseInt(gridGutter);
+          gHeight += gc[i].offsetHeight + parseInt(gridGutter);
       }
       /*
        * Calculate and set the masonry height based on the columns
@@ -40,14 +40,13 @@
       const medBreakpoint = 800;
       if (windowWidth >= largeBreakpoint) {
           //large
+        //   console.log(gHeight / bigGridCol, gHeight / (gcLength + 1))
           newHeight = gHeight / bigGridCol + gHeight / (gcLength + 1);
       } else if (windowWidth < largeBreakpoint && windowWidth >= medBreakpoint) {
           newHeight = gHeight / medGridCol + gHeight / (gcLength + 1);
       } else {
           newHeight = gHeight / sGridCol + gHeight / (gcLength + 1);
       }
-      if (newHeight <= 300) {
-          return setTimeout(() => calcGridSize(containerSelector, cardSelector), 3000);
-      }
+
       g.style.height = newHeight + 'px';
   }

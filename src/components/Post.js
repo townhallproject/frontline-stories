@@ -1,16 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import sizeMe from 'react-sizeme'
+import {
+  Waypoint
+} from 'react-waypoint';
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import Embed from './Embed'
+
 import './post.scss';
 
 class Post extends React.Component {
+  componentDidMount() {
+    const {
+      index,
+      handleMount
+    } = this.props;
+
+    handleMount(index)
+  }
   render() {
 
-    const { post, load } = this.props;
+    const {
+      post,
+      load,
+      handleEnter,
+    } = this.props;
     return (
             <div className="is-parent card-container" key={post.id}>
+              <Waypoint
+                onEnter={handleEnter}
+                id={post.id}
+                bottomOffset={'-700px'}
+
+              />
               <article
                 className={`blog-list-item tile is-child box ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -59,4 +82,6 @@ Post.propTypes = {
   }),
 }
 
-export default Post;
+export default sizeMe({
+  monitorHeight: true
+})(Post)
