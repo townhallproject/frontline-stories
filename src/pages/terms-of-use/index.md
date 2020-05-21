@@ -1,7 +1,7 @@
 ---
 title: Rules and Terms of Use
 ---
-Rules:
+**Rules**:
 
 By submitting a story, you indicate that, of your own free will, you agree that you are granting Town Hall Project, its agents, employees, and assigns, an unlimited, worldwide, perpetual, unconditional, gratis license and right to edit, modify, adapt, distribute, post, publish, broadcast, reproduce, encode, store, copy, transmit, publicly display, exhibit, and or otherwise use or reuse (without limitation as to when or to the number of times used) the story, in whole or in part (in each case, as submitted or as edited/modified in any way by Town Hall Project, in its sole discretion) in any way, and may use it in any and all media, now or hereafter devised, worldwide in perpetuity, without attribution, compensation, permission or notification to you, your successors or assigns, or any other entity, and without notice, review, or approval from you or any other party. Furthermore, although Town Hall Project is not under any legal or contractual obligation to do so, Town Hall Project reserves the right to review and/or edit any and all story elements deemed by Town Hall Project, in its sole discretion, to be prohibited, inappropriate, offensive, infringing or otherwise unacceptable.
 
@@ -11,11 +11,11 @@ You represent and warrant that you are not knowingly hiding or falsifying your p
 
 You acknowledge that you will receive no monetary payments for your submission or participation.
 
-Terms of Use:
+**Terms of Use**:
 
 THESE TERMS OF USE DESCRIBE YOUR RIGHTS AND RESPONSIBILITIES WHEN USING A Town Hall Project WEBSITE.  PLEASE READ THEM CAREFULLY.
 
-Acceptance of Terms. frontlinestories.us, including all site-related content and services (collectively, “Town Hall Project”) is provided by Town Hall Project (“Town Hall Project,” “we,” “us”). Your use of www.frontlinestories.us is subject to your compliance with the terms and conditions set forth in this Terms of Use agreement (“Terms of Use”), which supplement any additional guidelines or other terms posted by Town Hall Project in relation to specific site-related services or content. We reserve the right to update or modify the Terms of Use without advance notice by posting a revised Terms of Use to this website. Visitors to www.frontlinestories.us (”you,” or “Bloggers”) can determine whether the Terms of Use has been modified since your last visit by checking the “Last updated” legend at the top of the Agreement. By using www.frontlinestories.us, you agree to be bound by the version of the Terms of Use then in effect. Town Hall Project advises you to print and retain a copy of this Terms of Use in hard copy as a record.  Town Hall Project may deny service to you at any time and in its sole discretion, including in the event you do not adhere to the Terms of Use.
+**Acceptance of Terms**. frontlinestories.us, including all site-related content and services (collectively, “Town Hall Project”) is provided by Town Hall Project (“Town Hall Project,” “we,” “us”). Your use of www.frontlinestories.us is subject to your compliance with the terms and conditions set forth in this Terms of Use agreement (“Terms of Use”), which supplement any additional guidelines or other terms posted by Town Hall Project in relation to specific site-related services or content. We reserve the right to update or modify the Terms of Use without advance notice by posting a revised Terms of Use to this website. Visitors to www.frontlinestories.us (”you,” or “Bloggers”) can determine whether the Terms of Use has been modified since your last visit by checking the “Last updated” legend at the top of the Agreement. By using www.frontlinestories.us, you agree to be bound by the version of the Terms of Use then in effect. Town Hall Project advises you to print and retain a copy of this Terms of Use in hard copy as a record.  Town Hall Project may deny service to you at any time and in its sole discretion, including in the event you do not adhere to the Terms of Use.
 
 About Town Hall Project; Purpose of frontlinestories.us. Town Hall Project is a project of Sixteen Thirty Fund. All rules and terms of use described here about Town Hall Project / www.frontlinestories.us are made on behalf of Town Hall Project.
 
