@@ -1,7 +1,7 @@
 module.exports = {
     number: 7,
     title: null,
-    email: 'meganrm@gmail.com',
+    email: 'me@me.com',
     name: 'Megan Riel-Mehan',
     first_name: 'Megan',
     last_name: 'Riel-Mehan',
@@ -10,11 +10,11 @@ module.exports = {
     body: 'Test',
     data: {
         name: 'Megan Riel-Mehan',
-        email: 'meganrm@gmail.com',
-        phone: '5104997866',
+        email: 'me@me.com',
+        phone: '1111111111',
         city: 'Seattle',
         state: 'WA',
-        zipcode: '98122',
+        zipcode: '94103',
         occupation: 'Science',
         link: '',
         story: 'Test',
@@ -25,11 +25,11 @@ module.exports = {
     created_at: '2020-05-18T20:30:31.372Z',
     human_fields: {
         'Your name': 'Megan Riel-Mehan',
-        Email: 'meganrm@gmail.com',
-        Phone: '5104997866',
+        Email: 'me@me.com',
+        Phone: '1111111111',
         City: 'Seattle',
         State: 'WA',
-        Zipcode: '98122',
+        Zipcode: '94103',
         Occupation: 'Science',
         'Link to your story on social media': '',
         'Tell us more about your personal experience with the coronavirus pandemic': 'Test'
@@ -41,11 +41,11 @@ module.exports = {
     }, {
         title: 'Email',
         name: 'email',
-        value: 'meganrm@gmail.com'
+        value: 'me@me.com'
     }, {
         title: 'Phone',
         name: 'phone',
-        value: '5104997866'
+        value: '1111111111'
     }, {
         title: 'City',
         name: 'city',
@@ -57,7 +57,7 @@ module.exports = {
     }, {
         title: 'Zipcode',
         name: 'zipcode',
-        value: '98122'
+        value: '94103'
     }, {
         title: 'Occupation',
         name: 'occupation',
