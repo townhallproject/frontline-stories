@@ -8,8 +8,11 @@ export const FacebookEmbed = ({ link, slug }) => {
   
   return (
     <div className={`${slug} facebook-post`}>
-      <a href={link} target="_blank"></a>
-      <iframe title={slug} src={src} width="100%" height="440" style={{border:'none', overflow:'hidden'}} scrolling="no" frameBorder="0" allowTransparency={true} allow="encrypted-media"></iframe>
+      <a href={link} target="_blank" without rel="noopener noreferrer"></a>
+      <iframe 
+        title={slug} 
+        src={src} 
+        width="100%" height="440" style={{border:'none', overflow:'hidden'}} scrolling="no" frameBorder="0" allowTransparency={true} allow="encrypted-media"></iframe>
     </div>
   
 )}
