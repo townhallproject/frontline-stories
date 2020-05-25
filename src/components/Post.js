@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import sizeMe from 'react-sizeme'
 import {
+  kebabCase
+} from 'lodash'
+
+import {
   Waypoint
 } from 'react-waypoint';
 import PreviewCompatibleImage from './PreviewCompatibleImage'
@@ -65,6 +69,17 @@ class Post extends React.Component {
                           slug={post.fields.slug}
                       />}
                     </span>
+                    <ul className="taglist unstyled-list">
+                    {post.frontmatter.state && <li>
+                      <Link to={`/states/${kebabCase(post.frontmatter.state)}/`}>{post.frontmatter.state}</Link>
+                      </li>}
+                    {post.frontmatter.tags.map((tag) => 
+
+                      (<li><Link 
+                        to={`/tags/${kebabCase(tag)}/`}
+                      >{tag}</Link></li>)
+                    )}
+                    </ul>
                   </div>
                 </header>
               </article>

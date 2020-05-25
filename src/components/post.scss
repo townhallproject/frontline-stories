@@ -1,4 +1,5 @@
 @import './all.scss';
+@import './colors.scss';
 
 .card-container {
     margin: 0 8px 8px 0; /* Some gutter */
@@ -21,16 +22,31 @@
     left: 0;
 }
 
-// @media screen and (min-width: $mediumBreakpoint) { 
-//     .card-container {
-//         width: 50%;
-//     }
 
-// }
-
-// @media screen and (min-width: $largeBreakpoint) { 
-//     .card-container {
-//         width: 33%;
-//     }
-
-// }
+.content .taglist {
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  li {
+    padding:  0.5rem;
+    margin: 0 0.5rem 0.5rem 0;
+    color: white;
+    border-radius: 0.5rem;
+    border: 1px solid $bright-purple
+    }
+    a{
+        color: $bright-purple;
+    }
+    li:hover {
+        background-color: $bright-purple;
+        a {
+            color: white;
+        }
+    }
+}
