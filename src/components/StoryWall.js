@@ -100,7 +100,6 @@ export default () => (
         order: [ASC, DESC],
         fields: [frontmatter___featuredpost, frontmatter___date]
       }
-
       filter: {
         frontmatter: {
           displayPage: {
