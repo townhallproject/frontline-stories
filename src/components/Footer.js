@@ -35,14 +35,14 @@ const Footer = class extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
+                      <Link className="navbar-item" to="/terms-of-use">
+                        Terms of Use
+                      </Link>
+                    </li>
+                     <li>
+                      <Link className="navbar-item" to="/privacy-policy">
+                        Privacy Policy
+                      </Link>
                     </li>
                   </ul>
                 </section>
