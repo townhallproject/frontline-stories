@@ -46,10 +46,17 @@
   width: 100%;
 }
 
+.filter-bar {
+  display: flex;
+  margin-bottom: 2em;
+  div {
+    margin: 0.5em;
+  }
+}
 /* 1 columns by default, hide columns 2 & 3  */
 .grid-col--2, .grid-col--3 { display: none }
 
-@media ( min-width: 768px ) {
+@media ( min-width: 977px ) {
     .grid-col {
     width: 50%;
   }
@@ -57,7 +64,7 @@
 }
 
 /* 3 columns at medium size */
-@media ( min-width: 1208px ) {
+@media ( min-width: 1440px ) {
   .grid-col {
     width: 33%;
   }

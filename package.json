@@ -7,7 +7,6 @@
     "antd": "^4.2.5",
     "bootstrap": "^4.5.0",
     "bulma": "^0.8.0",
-    "colcade": "^0.2.0",
     "gatsby": "^2.13.31",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-antd": "^2.2.0",
@@ -44,8 +43,6 @@
     "react-twitter-embed": "^3.0.3",
     "react-waypoint": "^9.0.2",
     "react-youtube": "^7.11.2",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2",
     "superagent": "^5.2.2",
     "uuid": "^7.0.0"
   },

@@ -1,28 +1,26 @@
 import React from 'react'
-import { kebabCase } from 'lodash'
-
 
 import {
     Select
 } from 'antd';
 
-// import 'antd/dist/antd.compact.less'
-// import 'antd/lib/style/css';
-const {
-    Option
-} = Select;
 
-const StateFilter = ({states}
+const StateFilter = ({
+            options, placeholder, onChange
+        }
  
 ) => {
-    console.log(states)
   return (
 
-                  <Select placeholder='State' fluid multiple selection options={states.map(state => 
+                  <Select
+                    mode="multiple"
+                    style={{ flex: '1 1 80%' }}
+                    onChange={onChange}
+                    placeholder={placeholder} options={options.map(state => 
                  (
                     {
                         label: state.fieldValue,
-                        value: kebabCase(state.fieldValue),
+                        value: state.fieldValue,
                         key: state.fieldValue
                     }
                  )

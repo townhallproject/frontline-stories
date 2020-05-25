@@ -15,14 +15,7 @@ import Embed from './Embed'
 import './post.scss';
 
 class Post extends React.Component {
-  componentDidMount() {
-    const {
-      index,
-      handleMount
-    } = this.props;
 
-    handleMount(index)
-  }
   render() {
 
     const {
