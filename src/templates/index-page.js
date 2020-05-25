@@ -9,14 +9,12 @@ import {
 } from 'gatsby';
 import logo from '../img/logo.svg'
 import '../components/main.scss';
-
+import './index-page.scss'
 
 export const IndexPageTemplate = ({
   image,
-  title,
   heading,
   subtitle,
-  description,
 }) => (
   <div>
     <div
@@ -32,11 +30,11 @@ export const IndexPageTemplate = ({
       <div
        className="header-overlay"
       >
-        <div className="content has-text-centered">
+        <div className="content has-text-centered logo">
           <img
             src={logo}
             alt="Frontline stories"
-            style={{ width: '35em', fill: 'green', filter: 'drop-shadow(2px 0px 6px black)' }}
+            style={{filter: 'drop-shadow(2px 0px 6px black)' }}
           />
         </div>
      
@@ -54,24 +52,18 @@ export const IndexPageTemplate = ({
         </Link>
 
     </section>
-    <section className="section section--gradient">
+    <section className="section section--gradient main-container">
       <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="columns">
-                  <div className="column is-12 is-offset-5">
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    {heading}
-                  </h3>
-           
-                  <StoryWall />
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="content">
+              <div className="column is-12">
+                <h3 className="has-text-weight-semibold is-size-2">
+                  {heading}
+                </h3>
+          
+                <StoryWall />
 
-                </div>
               </div>
             </div>
           </div>
