@@ -84,4 +84,4 @@ You may opt out of receiving updates from TOWN HALL PROJECT by specifically opti
 
 ### CONTACT US
 
-If you have any questions about this Privacy Policy, please contact us at: TOWN HALL PROJECT EMAIL.
+If you have any questions about this Privacy Policy, please contact us at: info@townhallproject.com
