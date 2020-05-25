@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Colcade from 'colcade';
+import { filter } from 'lodash'
+
 import Post from './Post'
 import './storywall.scss'
-import { calcGridSize } from '../utils';
+import {
+  calcGridSize,
+  getNumColumns
+} from '../utils';
 
 
 class GridView extends React.Component {
@@ -15,29 +19,15 @@ class GridView extends React.Component {
 
   componentDidMount() {
 
-    
+    this.setState({columns : getNumColumns()})
     calcGridSize('.story-wall', '.story-wall .card-container');
-
-    window.addEventListener("resize", function () {
+    const me = this;
+    window.addEventListener("resize",  () => {
       calcGridSize('.story-wall', '.story-wall .card-container');
+      me.setState({
+        columns: getNumColumns()
+      })
     })
-  }
-
-
-  handleMount = (id) => {
-    const {
-      posts
-    } = this.props;
-
- 
-    if (id === posts.length -1 ) {
-      var grid = document.querySelector('.story-wall');
-
-      this.colc = new Colcade(grid, {
-        columns: '.grid-col',
-        items: '.card-container'
-      });
-    }
   }
 
   onSize = (size, id) => {
@@ -52,18 +42,68 @@ class GridView extends React.Component {
       })
     }
   }
-    
 
-  render() {
+  getColumnOne = () => {
+      const {
+        posts
+      } = this.props;
+      const numberColumns = this.state.columns;
+      return filter(posts, (post, index) => {
+        return index % numberColumns === 0
+      })
+  }
+    
+  getColumnTwo = () => {
     const {
       posts
     } = this.props;
+    
+    const numberColumns = this.state.columns;
+    if (numberColumns < 2) {
+      return []
+    }
+    return filter(posts, (post, index) => {
+      const number = index + 1;
+      return number % numberColumns === 0
+    })
+
+  }
+
+    getColumnThree = () => {
+      const {
+        posts
+      } = this.props;
+      const numberColumns = this.state.columns;
+      if (numberColumns < 3) {
+        return []
+      }
+      return filter(posts, (post, index) => {
+        const number = index + 2;
+        return number % numberColumns === 0
+      })
+
+    }
+
+  render() {
+
+    const columnOne = this.getColumnOne()
+    const columnTwo = this.getColumnTwo()
+    const columnThree = this.getColumnThree()
     return (<div className="columns is-multiline story-wall grid-container">
-        <div className="grid-col grid-col--1"></div>
-        <div className="grid-col grid-col--2"></div>
-        <div className="grid-col grid-col--3"></div>
-        {posts &&
-          posts.map(({ node: post }, index) => (
+       <div className = "grid-col grid-col--1">
+              {columnOne.map(({ node: post }, index) => (
+              <Post 
+                post={post}
+                key={post.fields.slug}
+                load={this.state[post.id] || index < 4}
+                onSize={(size) => this.onSize(size, post.id)}
+                index={index}
+                handleEnter={(event) => this.handleEnter(event, post.id)}
+              />
+          ))}
+        </div>
+        {columnTwo.length > 0 && (<div className="grid-col grid-col--2">
+            {columnTwo.map(({ node: post }, index) => (
               <Post 
                 post={post}
                 key={post.fields.slug}
@@ -74,6 +114,23 @@ class GridView extends React.Component {
                 handleEnter={(event) => this.handleEnter(event, post.id)}
               />
           ))}
+          </div>)}
+        
+        {columnThree.length > 0 &&
+        (<div className="grid-col grid-col--3">
+          {columnThree.map(({ node: post }, index) => (
+              <Post 
+                post={post}
+                key={post.fields.slug}
+                load={this.state[post.id] || index < 4}
+                handleMount={this.handleMount}
+                onSize={(size) => this.onSize(size, post.id)}
+                index={index}
+                handleEnter={(event) => this.handleEnter(event, post.id)}
+              />
+              ))}
+          </div>)}
+
       </div>)
   }
 }

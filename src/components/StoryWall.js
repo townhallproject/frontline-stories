@@ -4,64 +4,45 @@ import { graphql, StaticQuery } from 'gatsby'
 import Colcade from 'colcade';
 import GridView from './GridView'
 import './storywall.scss'
-import { calcGridSize } from '../utils';
-
+import { getNumColumns } from '../utils';
+import StateFilter from './Filters/Filter';
+import {filterPosts} from './Filters/selectors';
 
 class StoryWall extends React.Component {
   constructor(props) {
     super(props) 
     this.state = {
+      states: [],
+      tags: []
     }
   }
 
-  componentDidMount() {
-
-    
-    calcGridSize('.story-wall', '.story-wall .card-container');
-
-    window.addEventListener("resize", function () {
-      calcGridSize('.story-wall', '.story-wall .card-container');
-    })
-  }
-
-
-  handleMount = (id) => {
-    const {
-      data
-    } = this.props;
-
-    const {
-      edges: posts
-    } = data.allMarkdownRemark;
-
-    if (id === posts.length -1 ) {
-      var grid = document.querySelector('.story-wall');
-
-      this.colc = new Colcade(grid, {
-        columns: '.grid-col',
-        items: '.card-container'
-      });
-    }
-  }
-
-  onSize = (size, id) => {
-    calcGridSize('.story-wall', '.story-wall .card-container');
-  }
-
-  handleEnter = (event, id) => {
-    if (!this.state[id]) {
-
-      this.setState({
-        [id]: true
-      })
-    }
+  handleFilterChange = (values, key) => {
+    this.setState({[key] : values})
   }
     
 
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    return (<GridView posts={posts} />)
+    const { states } = data.allMarkdownRemark;
+    const {
+      tags
+    } = data.allMarkdownRemark;
+    const filteredPosts = filterPosts(posts, this.state.states, this.state.tags)
+    return (
+      <>
+      <div className="filter-bar">
+        <StateFilter options={states} placeholder="Filter by state" onChange={(values) => this.handleFilterChange(values, 'states')}
+        /> 
+        <StateFilter options={tags} placeholder="Filter by category" onChange={(values) => this.handleFilterChange(values, 'tags')}
+        /> 
+
+      </div>
+
+        <GridView posts={filteredPosts} />
+      </>
+      )
   }
 }
 
@@ -90,6 +71,14 @@ export default () => (
         }
       }
         ) {
+          states: group(field: frontmatter___state) {
+            fieldValue
+            totalCount
+          }
+          tags: group(field: frontmatter___tags) {
+            fieldValue
+            totalCount
+          }
           edges {
             node {
               id
@@ -105,6 +94,7 @@ export default () => (
                 displayPage
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
+                state
                 tags
               }
             }

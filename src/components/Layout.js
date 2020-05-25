@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import './all.scss'
+import "antd/dist/antd.css";
+
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
@@ -38,6 +40,7 @@ const TemplateWrapper = ({ children }) => {
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
+
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />

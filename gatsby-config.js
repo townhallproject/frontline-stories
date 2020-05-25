@@ -8,6 +8,23 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
+      resolve: `gatsby-plugin-less`,
+      options: {
+          javascriptEnabled: true,
+      },
+    }, 
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: {
+        style: true,
+        modifyVars: {
+          'primary-color': '#422260',
+          
+        },
+      }
+    },
+    
+    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
