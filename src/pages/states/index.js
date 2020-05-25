@@ -12,7 +12,6 @@ const StatesPage = ({
     },
   },
 }) => {
-  console.log(group)
   return (
   <Layout>
     <section className="section">
@@ -26,7 +25,6 @@ const StatesPage = ({
             <h1 className="title is-size-2 is-bold-light">States</h1>
             <ul className="taglist">
               {group.map(state => {
-                console.log(state)
                 return (
                 <li key={state.fieldValue}>
                   <Link to={`/states/${kebabCase(state.fieldValue)}/`}>
