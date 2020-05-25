@@ -70,12 +70,12 @@ class Post extends React.Component {
                       />}
                     </span>
                     <ul className="taglist unstyled-list">
-                    {post.frontmatter.state && <li>
+                    {post.frontmatter.state && <li key={post.frontmatter.state}>
                       <Link to={`/states/${kebabCase(post.frontmatter.state)}/`}>{post.frontmatter.state}</Link>
                       </li>}
                     {post.frontmatter.tags.map((tag) => 
 
-                      (<li><Link 
+                      (<li key={kebabCase(tag)}><Link 
                         to={`/tags/${kebabCase(tag)}/`}
                       >{tag}</Link></li>)
                     )}

@@ -5,7 +5,7 @@ import Colcade from 'colcade';
 import GridView from './GridView'
 import './storywall.scss'
 import { calcGridSize } from '../utils';
-
+import StateFilter from './Filters/StateFilter';
 
 class StoryWall extends React.Component {
   constructor(props) {
@@ -61,7 +61,13 @@ class StoryWall extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    return (<GridView posts={posts} />)
+    const { group : states} = data.allMarkdownRemark;
+    return (
+      <>
+      <StateFilter states={states} /> 
+      <GridView posts={posts} />
+      </>
+      )
   }
 }
 
@@ -90,6 +96,10 @@ export default () => (
         }
       }
         ) {
+          group(field: frontmatter___state) {
+            fieldValue
+            totalCount
+          }
           edges {
             node {
               id
