@@ -69,7 +69,6 @@ const TemplateWrapper = ({ children }) => {
               return t;
             }(document, "script", "twitter-wjs"))`}
           </script>
-          <script src="https://unpkg.com/colcade@0/colcade.js"></script>
 
     </div>
   )
