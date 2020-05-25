@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
-import imagesLoaded from 'imagesloaded';
+import Colcade from 'colcade';
 import Post from './Post'
 import './storywall.scss'
 import { calcGridSize } from '../utils';
-import {
-  Waypoint
-} from 'react-waypoint';
+
 
 class StoryWall extends React.Component {
   constructor(props) {
@@ -17,43 +15,67 @@ class StoryWall extends React.Component {
   }
 
   componentDidMount() {
+
+    
     calcGridSize('.story-wall', '.story-wall .card-container');
 
     window.addEventListener("resize", function () {
-      // Check if all the images finished loading
-      imagesLoaded(document.querySelector('.grid-container'), function () {
-        calcGridSize('.story-wall', '.story-wall .card-container');
-      });
+      calcGridSize('.story-wall', '.story-wall .card-container');
     })
   }
+
+
+  handleMount = (id) => {
+    const {
+      data
+    } = this.props;
+
+    const {
+      edges: posts
+    } = data.allMarkdownRemark;
+
+    if (id === posts.length -1 ) {
+      var grid = document.querySelector('.story-wall');
+
+      this.colc = new Colcade(grid, {
+        columns: '.grid-col',
+        items: '.card-container'
+      });
+    }
+  }
+
+  onSize = (size, id) => {
+    calcGridSize('.story-wall', '.story-wall .card-container');
+  }
+
+  handleEnter = (event, id) => {
+    if (!this.state[id]) {
+
+      this.setState({
+        [id]: true
+      })
+    }
+  }
+    
 
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    const handleEnter = (event, index) => {
-      calcGridSize('.story-wall', '.story-wall .card-container');
-      if (!this.state[index]) {
-
-        this.setState({
-          [index]: true
-        })
-      }
-    }
-      
     return (<div className="columns is-multiline story-wall grid-container">
+        <div className="grid-col grid-col--1"></div>
+        <div className="grid-col grid-col--2"></div>
+        <div className="grid-col grid-col--3"></div>
         {posts &&
           posts.map(({ node: post }, index) => (
             <>
               <Post 
                 post={post}
                 key={post.fields.slug}
-                load={this.state[index]}
-              />
-              <Waypoint
-                  onEnter={(event) => handleEnter(event, index)}
-                  id={index}
-                  bottomOffset={'-700px'}
-
+                load={this.state[post.id] || index < 4}
+                handleMount={this.handleMount}
+                onSize={(size) => this.onSize(size, post.id)}
+                index={index}
+                handleEnter={(event) => this.handleEnter(event, post.id)}
               />
             </>
           ))}
