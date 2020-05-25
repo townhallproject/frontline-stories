@@ -45,12 +45,10 @@ class StoryWall extends React.Component {
   }
 
   onSize = (size, id) => {
-    // console.log('changed hight',  size.height, id)
     calcGridSize('.story-wall', '.story-wall .card-container');
   }
 
   handleEnter = (event, id) => {
-    // calcGridSize('.story-wall', '.story-wall .card-container');
     if (!this.state[id]) {
 
       this.setState({
@@ -67,14 +65,13 @@ class StoryWall extends React.Component {
         <div className="grid-col grid-col--1"></div>
         <div className="grid-col grid-col--2"></div>
         <div className="grid-col grid-col--3"></div>
-        <div className="grid-col grid-col--4"></div>
         {posts &&
           posts.map(({ node: post }, index) => (
             <>
               <Post 
                 post={post}
                 key={post.fields.slug}
-                load={this.state[post.id]}
+                load={this.state[post.id] || index < 4}
                 handleMount={this.handleMount}
                 onSize={(size) => this.onSize(size, post.id)}
                 index={index}
@@ -103,7 +100,6 @@ export default () => (
         order: [ASC, DESC],
         fields: [frontmatter___featuredpost, frontmatter___date]
       }
-
       filter: {
         frontmatter: {
           displayPage: {
