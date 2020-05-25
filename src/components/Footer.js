@@ -62,12 +62,12 @@ const Footer = class extends React.Component {
               <div className="column is-9">
                 <h4>Partners</h4>
                 {partners.map((logo) => 
-                  (<img className="partner-logo" src={`img/${logo}`}/>)
+                  (<img className="partner-logo" src={`/img/${logo}`}/>)
                 )}
                 <h4>
                   For more COVID stories visit <a href="https://shareyourcovidstory.com/">Be A hero's stories website</a>.
                 </h4>
-                <img className="partner-logo" src="img/be-a-hero-logo.png"/>
+                <img className="partner-logo" src="/img/be-a-hero-logo.png"/>
               </div>
             </div>
           </div>

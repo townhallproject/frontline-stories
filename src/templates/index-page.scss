@@ -1,0 +1,16 @@
+.header-overlay .logo img  {
+    width: 90%;
+}
+
+.main-container {
+    padding: 0;
+}
+@media ( min-width: 977px ) {
+        .header-overlay .logo img  {
+            width: 35em;
+        }
+        .main-container {
+            padding: 3rem 1.5rem;;
+    }
+    
+}
