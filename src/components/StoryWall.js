@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
-import Colcade from 'colcade';
 import GridView from './GridView'
 import './storywall.scss'
-import { getNumColumns } from '../utils';
 import StateFilter from './Filters/Filter';
 import {filterPosts} from './Filters/selectors';
 
