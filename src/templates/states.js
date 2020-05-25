@@ -1,18 +1,48 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
+import Colcade from 'colcade';
+
 import Layout from '../components/Layout'
 import Post from '../components/Post'
+import {
+  calcGridSize
+} from '../utils';
+import GridView from '../components/GridView';
 
 class StatesRoute extends React.Component {
+  handleMount = (id) => {
+    const {
+      data
+    } = this.props;
+
+    const {
+      edges: posts
+    } = data.allMarkdownRemark;
+
+    if (id === posts.length - 1) {
+      var grid = document.querySelector('.story-wall');
+
+      this.colc = new Colcade(grid, {
+        columns: '.grid-col',
+        items: '.card-container'
+      });
+    }
+  }
+  onSize = (size, id) => {
+    calcGridSize('.story-wall', '.story-wall .card-container');
+  }
+
+  handleEnter = (event, id) => {
+    if (!this.state[id]) {
+
+      this.setState({
+        [id]: true
+      })
+    }
+  }
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(({ node })  => {
-      const post = node
-      console.log(post)
-      return (
-     <Post post={post}/>
-    )})
     const state = this.props.pageContext.state
     const title = this.props.data.site.siteMetadata.title
     const totalCount = this.props.data.allMarkdownRemark.totalCount
@@ -31,10 +61,8 @@ class StatesRoute extends React.Component {
                 style={{ marginBottom: '6rem' }}
               >
                 <h3 className="title is-size-4 is-bold-light">{stateHeader}</h3>
-                <ul className="taglist">{postLinks}</ul>
-                <p>
+                <GridView posts={posts} />
                   <Link to="/states/">Browse all states</Link>
-                </p>
               </div>
             </div>
           </div>

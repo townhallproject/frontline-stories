@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import Colcade from 'colcade';
-import Post from './Post'
+import GridView from './GridView'
 import './storywall.scss'
 import { calcGridSize } from '../utils';
 
@@ -61,25 +61,7 @@ class StoryWall extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    return (<div className="columns is-multiline story-wall grid-container">
-        <div className="grid-col grid-col--1"></div>
-        <div className="grid-col grid-col--2"></div>
-        <div className="grid-col grid-col--3"></div>
-        {posts &&
-          posts.map(({ node: post }, index) => (
-            <>
-              <Post 
-                post={post}
-                key={post.fields.slug}
-                load={this.state[post.id] || index < 4}
-                handleMount={this.handleMount}
-                onSize={(size) => this.onSize(size, post.id)}
-                index={index}
-                handleEnter={(event) => this.handleEnter(event, post.id)}
-              />
-            </>
-          ))}
-      </div>)
+    return (<GridView posts={posts} />)
   }
 }
 

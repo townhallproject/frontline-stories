@@ -4,7 +4,7 @@ import TwitterEmbed from './TwitterEmbed'
 import FacebookEmbed from './FacebookEmbed'
 import YouTubeEmbed from './YouTubeEmbed'
 import InstagramEmbed from './InstagramEmbed';
-import Content, {
+import {
   HTMLContent
 } from '../components/Content'
 

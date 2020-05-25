@@ -14,7 +14,6 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-  console.log(tags)
   return (
     <section className="section">
       {helmet || ''}
