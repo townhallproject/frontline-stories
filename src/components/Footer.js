@@ -1,29 +1,40 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../img/logo.svg'
 
 import './footer.scss';
+
+const partners = [
+  'transparent-pvwc-logo.png',
+  'cd-logo-navy.png',
+  'cpda-logo.png',
+  'embarc_color.png',
+  'nywsa-logo.png',
+  'thp_logo_vertical.png',
+  'ofw-logo.png',
+  'six-stacked-logo.png',
+  'gpas-logo-black-web.png',
+  'taglogo_ctr_blue60blk.png',
+  'afscme-logo-only-2c_color.png',
+  'naacp_sig_y-c.png',
+  '4b.png',
+  'black-redlogo-11.png',
+]
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer footer-container has-text-white-ter">
-        <div className="content has-text-centered">
-          <a href="/">
-            <img
-              src={logo}
-              alt="Frontline stories"
-              style={{ width: '14em', height: '10em' }}
-            />
-          </a>
-        </div>
-        <div className="content has-text-centered  has-text-white-ter">
-          <div className="container has-text-white-ter">
+      <footer className="footer footer-container ">
+        <div className="content has-text-centered  ">
+          <div className="container">
             <div className="columns">
-              <div className="column is-4">
+              <div className="column is-3">
                 <section className="menu">
                   <ul className="menu-list">
+                    <li><Link className="navbar-item" to="/contact">
+                        <h4>Tell your story</h4>
+                        </Link>
+                    </li> 
                     <li>
                       <Link to="/" className="navbar-item">
                         Home
@@ -47,47 +58,16 @@ const Footer = class extends React.Component {
                   </ul>
                 </section>
               </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Tell your story
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                {/* <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a> */}
+         
+              <div className="column is-9">
+                <h4>Partners</h4>
+                {partners.map((logo) => 
+                  (<img className="partner-logo" src={`img/${logo}`}/>)
+                )}
+                <h4>
+                  For more COVID stories visit <a href="https://shareyourcovidstory.com/">Be A hero's stories website</a>.
+                </h4>
+                <img className="partner-logo" src="img/be-a-hero-logo.png"/>
               </div>
             </div>
           </div>
