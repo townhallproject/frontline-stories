@@ -45,12 +45,10 @@ class StoryWall extends React.Component {
   }
 
   onSize = (size, id) => {
-    // console.log('changed hight',  size.height, id)
     calcGridSize('.story-wall', '.story-wall .card-container');
   }
 
   handleEnter = (event, id) => {
-    // calcGridSize('.story-wall', '.story-wall .card-container');
     if (!this.state[id]) {
 
       this.setState({
@@ -67,7 +65,6 @@ class StoryWall extends React.Component {
         <div className="grid-col grid-col--1"></div>
         <div className="grid-col grid-col--2"></div>
         <div className="grid-col grid-col--3"></div>
-        <div className="grid-col grid-col--4"></div>
         {posts &&
           posts.map(({ node: post }, index) => (
             <>
