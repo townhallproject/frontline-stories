@@ -46,8 +46,7 @@ exports.handler = function (event, context, callback) {
         data
     } = payload;
     const date = new Date();
-    // const formattedDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-    const formattedDate = Date.now();
+    const formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
     const slugName = `${formattedDate}-${data.name.replace(' ', '-').toLowerCase()}`;
     const newBranchName = `cms/story-wall/${slugName}`;
     const dataToUpload = convertToPost(data, payload.created_at);
