@@ -8,5 +8,5 @@ occupation: Congresswoman
 source: twitter
 state: CA
 tags:
-  - Family Member of COVID Victim
+  - Family Member of COVID-19 Victim
 ---

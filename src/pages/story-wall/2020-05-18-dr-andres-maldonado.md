@@ -7,5 +7,5 @@ link: https://twitter.com/nytopinion/status/1256660392694120449
 source: twitter
 state: NY
 tags:
-  - COVID Survivor
+  - COVID-19 Survivor
 ---

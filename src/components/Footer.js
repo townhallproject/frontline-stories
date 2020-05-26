@@ -65,7 +65,7 @@ const Footer = class extends React.Component {
                   (<img key={logo} alt={`partner logo: ${logo}`} className="partner-logo" src={`/img/${logo}`}/>)
                 )}
                 <h4>
-                  For more COVID stories visit <a href="https://shareyourcovidstory.com/">Be A hero's stories website</a>.
+                  For more COVID-19 stories visit <a href="https://shareyourcovidstory.com/">Be A hero's stories website</a>.
                 </h4>
                 <img key="be-a-hero-logo" className="partner-logo" alt="partner logo: be a hero" src="/img/be-a-hero-logo.png"/>
               </div>

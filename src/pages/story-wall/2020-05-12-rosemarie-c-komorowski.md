@@ -8,7 +8,5 @@ occupation: Retired
 source: twitter
 state: NY
 tags:
-  - Family Member of COVID Victim
-tag:
-  - Family Member of COVID Victim
+  - Family Member of COVID-19 Victim
 ---

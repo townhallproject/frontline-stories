@@ -8,5 +8,5 @@ occupation: ""
 source: twitter
 state: NJ
 tags:
-  - COVID Survivor
+  - COVID-19 Survivor
 ---
