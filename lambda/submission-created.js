@@ -2,12 +2,14 @@ const superagent = require('superagent');
 
 const API_URL = 'https://api.github.com/repos';
 const REPO = 'townhallproject/frontline-stories';
-const githubApi = {};
+const githubApi = {
+    get: (path) => {
+        return Promise.resolve()
+        // return superagent.get(`${API_URL}/${REPO}/${path}`)
+        //     .set('User-Agent', 'townhallproject')
+    }
+};
 
-githubApi.get = (path) => {
-    return superagent.get(`${API_URL}/${REPO}/${path}`)
-        .set('User-Agent', 'townhallproject')
-}
 
 function convertToPost(formEntries, date) {
     const templateKey = formEntries.link ? 'embed-post' : 'blog-post';
@@ -64,5 +66,5 @@ exports.handler = function (event, context, callback) {
                 sha,
             }
             // return githubApi.post('git/refs', dataToSend)
-        })
+        }).catch(console.log)
 }
