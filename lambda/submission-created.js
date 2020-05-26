@@ -1,13 +1,12 @@
-// const superagent = require('superagent');
+const superagent = require('superagent');
 // const find = require('lodash').find;
 
 const API_URL = 'https://api.github.com/repos';
 const REPO = 'townhallproject/frontline-stories';
 const githubApi = {
     get: (path) => {
-        return Promise.resolve()
-        // return superagent.get(`${API_URL}/${REPO}/${path}`)
-        //     .set('User-Agent', 'townhallproject')
+        return superagent.get(`${API_URL}/${REPO}/${path}`)
+            .set('User-Agent', 'townhallproject')
     }
 };
 
