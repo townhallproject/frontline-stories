@@ -1,7 +1,6 @@
 /* @flow */
 const leftPad = require("left-pad");
 
-
 function newLineAndIndent(markdownString, depth) {
     if (depth === 0) {
         return `${markdownString}\n`;

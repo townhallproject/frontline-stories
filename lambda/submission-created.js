@@ -1,4 +1,6 @@
 const find = require('lodash').find;
+const map = require('lodash').map;
+
 const githubApi = require('./github-api');
 const convertToMarkdown = require('./convert-json-to-frontmatter');
 
