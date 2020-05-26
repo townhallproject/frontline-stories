@@ -1,6 +1,6 @@
 // For more info, check https://www.netlify.com/docs/functions/#javascript-lambda-functions
-const find = require('lodash');
-const map = require('lodash');
+const find = require('lodash').find;
+const map = require('lodash').map;
 const leftPad = require("left-pad");
 
 const superagent = require('superagent');
