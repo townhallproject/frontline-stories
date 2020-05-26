@@ -4,7 +4,7 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import { HTMLContent } from '../components/Content'
 import Embed from '../components/Embed'
 
 export const EmbedPostTemplate = ({
