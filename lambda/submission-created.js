@@ -22,6 +22,7 @@ exports.handler = function (event, context, callback) {
     try {
         payload = JSON.parse(event.body).payload;
     } catch (error) {
+        console.log(error)
         return callback(`error parsing JSON ${error}`);
     }
     const {
