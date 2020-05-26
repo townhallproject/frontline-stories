@@ -23,6 +23,7 @@ collections:
       - {label: "Display Page", name: "displayPage", widget: "hidden", default: "story-wall"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Name", name: "name", widget: "string"}
+      - {label: "Hide name on site?", name: "hideName", widget: "boolean", required: false, default: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
       - {label: "Featured Image", name: "featuredimage", widget: "image", required: false}
@@ -41,6 +42,7 @@ collections:
       - {label: "Display Page", name: "displayPage", widget: "hidden", default: "story-wall"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "embed-post"}
       - {label: "Name", name: "name", widget: "string"}
+      - {label: "Hide name on site?", name: "hideName", widget: "boolean", required: false, default: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
       - {label: "Link to post", name: "link", widget: "string"}

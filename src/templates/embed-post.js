@@ -19,9 +19,9 @@ export const EmbedPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+            {name && <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {name}
-            </h1>
+            </h1>}
                 <Embed 
                   link={post.frontmatter.link}
                   source={post.frontmatter.source}
@@ -61,7 +61,7 @@ const EmbedPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        name={post.frontmatter.name}
+        name={post.frontmatter.hideName ? '' : post.frontmatter.name }
         post={post}
         helmet={
           <Helmet titleTemplate="%s | Blog">
@@ -99,6 +99,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         name
         link
+        occupation
+        hideName
         source
         tags
       }

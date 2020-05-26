@@ -64,6 +64,7 @@ export const tagPageQuery = graphql`
             source
             link
             occupation
+            hideName
             tags
             state
           }

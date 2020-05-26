@@ -53,7 +53,7 @@ class Post extends React.Component {
                         className="title has-text-primary is-size-4"
                         to={post.fields.slug}
                       >
-                        <h4>{post.frontmatter.name}</h4>
+                        {post.frontmatter.hideName ? null: <h4>{post.frontmatter.name}</h4>}
                       </Link>
                       {post.frontmatter.occupation && <span>{post.frontmatter.occupation}</span>}
                     </div>
