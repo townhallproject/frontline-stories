@@ -14,10 +14,10 @@ function convertToPost(formEntries, date) {
 }
 
 exports.handler = function (event, context, callback) {
-    console.log(event);
     if (!event.body) {
         return callback('no body');
     }
+    console.log(event.body)
     let payload;
     try {
         payload = JSON.parse(event.body).payload;
