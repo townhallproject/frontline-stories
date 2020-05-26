@@ -1,19 +1,37 @@
-exports.handler = function (event, context, callback) {
-    console.log(event)
-    if (!event.body) {
+function convertToPost(formEntries, date) {
+    const templateKey = formEntries.link ? 'embed-post' : 'blog-post';
+    return {
+        displayPage: 'story-wall',
+        templateKey,
+        name: formEntries.name,
+        date,
+        link: formEntries.link,
+        occupation: formEntries.occupation,
+        source: formEntries.source,
+        tags: []
 
-        return callback('no body')
+    }
+}
+
+exports.handler = function (event, context, callback) {
+    console.log(event);
+    if (!event.body) {
+        return callback('no body');
     }
     let payload;
     try {
         payload = JSON.parse(event.body).payload;
     } catch (error) {
-        return callback(`error parsing JSON ${error}`)
+        return callback(`error parsing JSON ${error}`);
     }
     const {
         data
     } = payload;
-    const slugName = `${Date.now()}-${data.name.replace(' ', '-').toLowerCase()}`;
+    const date = new Date();
+    const formattedDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+    const slugName = `${formattedDate}-${data.name.replace(' ', '-').toLowerCase()}`;
     const newBranchName = `cms/story-wall/${slugName}`;
-    console.log(slugName, newBranchName, data)
+    const dataToUpload = convertToPost(data, payload.created_at);
+    console.log(slugName, dataToUpload);
+
 }
