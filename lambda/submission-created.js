@@ -1,8 +1,8 @@
 // For more info, check https://www.netlify.com/docs/functions/#javascript-lambda-functions
-const find = require('lodash').find;
-const map = require('lodash').map;
-const requestApi = require('./github-api');
-const convertToMarkdown = require('./convert-json-to-frontmatter');
+import { find } from 'lodash';
+import { map } from 'lodash';
+import githubApi from '../lib/github-api';
+import convertToMarkdown from '../lib/convert-json-to-frontmatter';
 
 function convertToPost(formEntries, date) {
     const templateKey = formEntries.link ? 'embed-post' : 'blog-post';
@@ -19,22 +19,22 @@ function convertToPost(formEntries, date) {
     }
 }
  function getMasterSha() {
-    return requestApi.get('git/refs/head')
+    return githubApi.get('git/refs/head')
         .then((response) => {
             const { body } = response;
-            const master = find(body, (ele) => ele.ref === 'refs/heads/master')
-            return master.object.sha
+            const master = find(body, (ele) => ele.ref === 'refs/heads/master');
+            return master.object.sha;
         })
  }
 
-module.exports.handler = async function (event, context, callback) {
+export async function handler (event, context, callback) {
     const {
         payload
     } = JSON.parse(event.body)
     const { data } = payload;
-    const slugName = `${Date.now()}-${data.name.replace(' ', '-').toLowerCase()}`
+    const slugName = `${Date.now()}-${data.name.replace(' ', '-').toLowerCase()}`;
     const newBranchName = `cms/story-wall/${slugName}`;
-    const dataToUpload = convertToPost(data, payload.created_at)
+    const dataToUpload = convertToPost(data, payload.created_at);
     getMasterSha()
         .then(sha => {
             console.log('got sha', sha)
@@ -42,7 +42,7 @@ module.exports.handler = async function (event, context, callback) {
                 ref: `refs/heads/${newBranchName}`,
                 sha,
             }
-            return requestApi.post('git/refs', dataToSend)
+            return githubApi.post('git/refs', dataToSend)
         })
         .then((returned) => {
             const convertedData = map(dataToUpload, (value, key) => ({[key]: value}))
@@ -57,7 +57,7 @@ module.exports.handler = async function (event, context, callback) {
                 branch: newBranchName,
                 content: base64Content
             }
-            return requestApi.put(`contents/src/pages/story-wall/${slugName}.md`, dataToSend)
+            return githubApi.put(`contents/src/pages/story-wall/${slugName}.md`, dataToSend)
         })
         .then(() => {
             const dataToSend = {
@@ -65,12 +65,12 @@ module.exports.handler = async function (event, context, callback) {
                 head: newBranchName,
                 base: 'master'
             }
-            return requestApi.post('pulls', dataToSend)
+            return githubApi.post('pulls', dataToSend)
         })
         .then(returned => {
             console.log(returned.body.issue_url)
             const ref = returned.body.issue_url;
-            return requestApi.postFullUrl(`${ref}/labels`, {
+            return githubApi.postFullUrl(`${ref}/labels`, {
                 labels: ['netlify-cms/draft']
             })
         })
