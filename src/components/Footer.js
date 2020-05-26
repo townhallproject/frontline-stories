@@ -19,6 +19,7 @@ const partners = [
   'naacp_sig_y-c.png',
   '4b.png',
   'black-redlogo-11.png',
+  'little-lobbyists.png',
 ]
 
 const Footer = class extends React.Component {
