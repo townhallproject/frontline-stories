@@ -15,6 +15,7 @@ export const IndexPageTemplate = ({
   image,
   heading,
   subtitle,
+  description
 }) => (
   <div>
     <div
@@ -41,12 +42,18 @@ export const IndexPageTemplate = ({
       </div>
     </div>
     <section className="tell-story-container">
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen subtitle"
+        <div
+          className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen subtitle"
       
         >
           {subtitle}
-        </h3>
+        </div>
+        <div
+          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen subtitle"
+      
+        >
+          {description}
+        </div>
         <Link className="btn" to="/contact">
                 Tell your story
         </Link>
