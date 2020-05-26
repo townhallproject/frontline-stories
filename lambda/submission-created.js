@@ -1,4 +1,5 @@
-const superagent = require('superagent');
+// const superagent = require('superagent');
+// const find = require('lodash').find;
 
 const API_URL = 'https://api.github.com/repos';
 const REPO = 'townhallproject/frontline-stories';
@@ -30,11 +31,12 @@ function convertToPost(formEntries, date) {
  function getMasterSha() {
      return githubApi.get('git/refs/head')
          .then((response) => {
-             const {
-                 body
-             } = response;
-             const master = find(body, (ele) => ele.ref === 'refs/heads/master');
-             return master.object.sha;
+             return 'testing';
+            //  const {
+            //      body
+            //  } = response;
+            //  const master = find(body, (ele) => ele.ref === 'refs/heads/master');
+            //  return master.object.sha;
          })
  }
 
