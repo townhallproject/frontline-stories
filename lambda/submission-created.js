@@ -1,3 +1,14 @@
+const superagent = require('superagent');
+
+const API_URL = 'https://api.github.com/repos';
+const REPO = 'townhallproject/frontline-stories';
+const githubApi = {};
+
+githubApi.get = (path) => {
+    return superagent.get(`${API_URL}/${REPO}/${path}`)
+        .set('User-Agent', 'townhallproject')
+}
+
 function convertToPost(formEntries, date) {
     const templateKey = formEntries.link ? 'embed-post' : 'blog-post';
     return {
@@ -7,11 +18,23 @@ function convertToPost(formEntries, date) {
         date,
         link: formEntries.link,
         occupation: formEntries.occupation,
-        source: formEntries.source,
+        source: formEntries.source || '',
         tags: []
 
     }
 }
+
+
+ function getMasterSha() {
+     return githubApi.get('git/refs/head')
+         .then((response) => {
+             const {
+                 body
+             } = response;
+             const master = find(body, (ele) => ele.ref === 'refs/heads/master');
+             return master.object.sha;
+         })
+ }
 
 exports.handler = function (event, context, callback) {
     if (!event.body) {
@@ -33,6 +56,13 @@ exports.handler = function (event, context, callback) {
     const slugName = `${formattedDate}-${data.name.replace(' ', '-').toLowerCase()}`;
     const newBranchName = `cms/story-wall/${slugName}`;
     const dataToUpload = convertToPost(data, payload.created_at);
-    console.log(slugName, dataToUpload);
-
+    return getMasterSha()
+        .then(sha => {
+            console.log('got sha', sha)
+            const dataToSend = {
+                ref: `refs/heads/${newBranchName}`,
+                sha,
+            }
+            // return githubApi.post('git/refs', dataToSend)
+        })
 }
