@@ -54,13 +54,13 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm run develop",
-    "build": "npm run clean && netlify-lambda build lambda && gatsby build",
-    "develop": "npm run clean && netlify-lambda build lambda && gatsby develop",
+    "build": "npm run clean && gatsby build",
+    "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "prettier": "^1.15.3"
+    "prettier": "^2.0.5"
   }
 }
