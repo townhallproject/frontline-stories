@@ -2,8 +2,6 @@
 
 
       const columns = Array.from(document.querySelectorAll('.grid-col'));
-
-
       let height = 0;
       columns.forEach(ele => {
           if (ele.offsetHeight > height) {
@@ -11,6 +9,7 @@
           }
       }) 
       const g = document.querySelector(containerSelector);
+      height = height + 50 // some padding for the bottom
       g.style.height = height + 'px';
   }
 
