@@ -1,7 +1,7 @@
 require('dotenv').config()
 const testData = require('./test-data');
 
-const submissionListener = require('./submission-created').handler;
+const submissionListener = require('../lambda/submission-created-broken').handler;
 
 
 const body = {
