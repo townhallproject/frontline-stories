@@ -48,20 +48,21 @@ class Post extends React.Component {
                     </div>
                   ) : null}
                   <div className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.name}
-                    </Link>
-                    <span className="subtitle is-size-5 is-block">
+                    <div className="header">
+                      <Link
+                        className="title has-text-primary is-size-4"
+                        to={post.fields.slug}
+                      >
+                        <h4>{post.frontmatter.name}</h4>
+                      </Link>
+                      {post.frontmatter.occupation && <span>{post.frontmatter.occupation}</span>}
+                    </div>
                     {load && <Embed 
                           link={post.frontmatter.link}
                           source={post.frontmatter.source}
                           story={post.html}
                           slug={post.fields.slug}
                       />}
-                    </span>
                     <ul className="taglist unstyled-list">
                     {post.frontmatter.state && <li key={post.frontmatter.state}>
                       <Link to={`/states/${kebabCase(post.frontmatter.state)}/`}>{post.frontmatter.state}</Link>

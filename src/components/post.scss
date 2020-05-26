@@ -9,6 +9,17 @@
         min-height: 470px;
 
     }
+    .header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        h4 {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    }
+
 }
 
 .facebook-post {

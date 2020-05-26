@@ -65,6 +65,7 @@ export const statesPageQuery = graphql`
             name
             source
             link
+            occupation
             tags
             state
           }

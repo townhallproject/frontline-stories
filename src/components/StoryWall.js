@@ -93,6 +93,7 @@ export default () => (
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
                 state
+                occupation
                 tags
               }
             }
