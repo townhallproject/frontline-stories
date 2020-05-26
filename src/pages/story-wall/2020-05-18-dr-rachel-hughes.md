@@ -8,6 +8,5 @@ occupation: ER Physician
 source: facebook
 state: WI
 tags:
-  - Wisconsin
   - Medical Professional
 ---
