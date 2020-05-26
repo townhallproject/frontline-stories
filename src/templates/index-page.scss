@@ -1,3 +1,16 @@
+
+.header-overlay {
+  display: flex;
+  height: 100%;
+  padding: 40px 0;
+  width: 100%;
+  line-height: 1;
+  background: #44087f59;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
 .header-overlay .logo img  {
     width: 90%;
 }
