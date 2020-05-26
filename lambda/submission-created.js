@@ -1,8 +1,8 @@
 // For more info, check https://www.netlify.com/docs/functions/#javascript-lambda-functions
-import { find } from 'lodash';
-import { map } from 'lodash';
-import githubApi from '../lib/github-api';
-import convertToMarkdown from '../lib/convert-json-to-frontmatter';
+const find = require('lodash');
+const map = require('lodash');
+const githubApi = require('./github-api');
+const convertToMarkdown = require('./convert-json-to-frontmatter');
 
 function convertToPost(formEntries, date) {
     const templateKey = formEntries.link ? 'embed-post' : 'blog-post';
@@ -27,10 +27,17 @@ function convertToPost(formEntries, date) {
         })
  }
 
-export async function handler (event, context, callback) {
-    const {
-        payload
-    } = JSON.parse(event.body)
+exports.handler = function handler(event, context, callback) {
+    if (!event.body) {
+        
+        return callback('no body')
+    }
+    let payload;    
+    try {
+        payload = JSON.parse(event.body).payload;
+    } catch (error) {
+        return callback(`error parsing JSON ${error}`)
+    }
     const { data } = payload;
     const slugName = `${Date.now()}-${data.name.replace(' ', '-').toLowerCase()}`;
     const newBranchName = `cms/story-wall/${slugName}`;

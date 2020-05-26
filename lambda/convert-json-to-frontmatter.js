@@ -1,5 +1,5 @@
 /* @flow */
-import leftPad from "left-pad";
+const leftPad = require("left-pad");
 
 
 function newLineAndIndent(markdownString, depth) {
@@ -73,4 +73,4 @@ function transformToMarkdownString(frontmatterMarkdown) {
     return markdownString;
 }
 
-export default transformToMarkdownString;
+module.exports = transformToMarkdownString;
