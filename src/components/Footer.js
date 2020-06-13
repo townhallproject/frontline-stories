@@ -20,6 +20,9 @@ const partners = [
   '4b.png',
   'black-redlogo-11.png',
   'little-lobbyists.png',
+  'health-care-voter-logo-2-.jpg',
+  'rootcircle_dk-brown.jpg',
+  'tm-logo-green-background.png'
 ]
 
 const Footer = class extends React.Component {
