@@ -20,22 +20,22 @@ export const RecordStoryPageTemplate = ({ title, content, contentComponent }) =>
               {/* <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2> */}
+              <PageContent className="content" content={content} />
               <ScriptTag
-                    id="countable-social-video-script"
+                  id="countable-social-video-script"
                   src="https://www.countable.us/widgets/social-video/plugin.js"
                   data-partner-id="41d4052e-67f4-46a3-b995-db92ff20aefe"
                   data-only-featured="true"
                   data-auto-campaign="true"
                   data-video-sharing="true"
-                  data-video-share-title="This is where your social sharing ‘title’ goes."
-                  data-video-share-body="This is where your social sharing body goes."
+                  data-video-share-title="SHARE YOUR STORY"
+                  data-video-share-body="Has the coronavirus crisis personally affected you or someone you know? It's now easier than ever for you to take action and make your voice heard. Just click below and record your video."
                   data-video-share-url=""
                   data-user-mode="lead_with_zip"
                   data-video-context=""
                   data-title="SHARE YOUR STORY"
                   data-subtitle="Your story will help inspire others"
-                  data-body="It's now easier than ever for you to take action make your voice heard. Just click below
-                  and record your video."
+                  data-body="Has the coronavirus crisis personally affected you or someone you know? It's now easier than ever for you to take action and make your voice heard. Just click below and record your video."
                   data-cta="Record Your Video"
                   data-cta-background-color="#0a3184"
                   data-cta-text-color="#ffffff"
