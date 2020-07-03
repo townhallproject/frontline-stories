@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import { Helmet } from 'react-helmet'
@@ -16,11 +16,10 @@ export const RecordStoryPageTemplate = ({ title, content, contentComponent }) =>
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <div className="section">
               {/* <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2> */}
-              <PageContent className="content" content={content} />
+              {/* <PageContent className="content" content={content} /> */}
               <ScriptTag
                   id="countable-social-video-script"
                   src="https://www.countable.us/widgets/social-video/plugin.js"
@@ -44,8 +43,10 @@ export const RecordStoryPageTemplate = ({ title, content, contentComponent }) =>
                   type="text/javascript" async>
               </ScriptTag>
             </div>
-          </div>
         </div>
+        <Link className="navbar-item column is-10 is-offset-4" to="/contact">
+          Or submit your story on social media
+        </Link> 
       </div>
     </section>
   )

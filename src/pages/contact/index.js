@@ -1,5 +1,9 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
+import {
+  Link
+} from 'gatsby'
+
 import Layout from '../../components/Layout'
 
 import './style.scss';
@@ -206,6 +210,9 @@ export default class Index extends React.Component {
               </form>
             </div>
           </div>
+          <Link className="navbar-item column is-10 is-offset-5" to="/record-your-story">
+            Or record your story directly
+          </Link> 
         </section>
       </Layout>
     )

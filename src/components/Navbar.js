@@ -66,7 +66,10 @@ const Navbar = class extends React.Component {
               </Link>
               <Link className="navbar-item" to="/contact">
                 Submit a Story
-              </Link>    
+              </Link>
+              <Link className="navbar-item" to="/record-your-story">
+                Record your story
+              </Link> 
               <a target="_blank"  rel="noopener noreferrer" className="navbar-item" href="https://thehubproject.us19.list-manage.com/subscribe?u=71c118e79d1b482e43272a116&id=e3236c52d5">
                 Subscribe
               </a>
